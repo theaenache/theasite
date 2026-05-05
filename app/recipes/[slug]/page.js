@@ -34,8 +34,9 @@ function markdownToHtml(md) {
     .join('\n');
 }
 
-export default function RecipePage({ params }) {
-  const recipe = getRecipe(params.slug);
+export default async function RecipePage({ params }) {
+  const { slug } = await params;
+  const recipe = getRecipe(slug);
 
   if (!recipe) return (
     <div style={{ padding: 'clamp(60px, 8vw, 100px) calc(var(--border-width) + 48px)' }}>

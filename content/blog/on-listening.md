@@ -1,7 +1,7 @@
 ---
 title: "On Listening"
 date: "2026-05-02"
-excerpt: "We are surrounded by people worth knowing. We just stopped paying attention. Take time to listen."
+excerpt: "We are surrounded by people worth knowing, we just stopped paying attention. Take time to listen."
 cover: ""
 tag: "Creative Writing"
 ---
@@ -13,20 +13,21 @@ uncomfortable in my chest that I didn't know what to do with.
 
 I still don't, really. But I've stopped looking away from it.
 
-When I trained as a CNA I met a woman who had crossed the Carpathians on foot 
-at nineteen. She told me while I was adjusting the blood pressure cuff on her 
-arm, the way you mention the weather. I almost missed it. I was focused on 
-the numbers.
+When I trained as a CNA I sat with a woman who had a stage four pressure ulcer 
+and could no longer manage her continence on her own. She was in real pain—the 
+kind that reorganizes a person, and she would try to tell you that. She had a 
+way of reaching for the words slowly, like she was building something, trying 
+to make someone understand what it felt like to be inside her body. Staff were 
+not unkind. But wounds need dressing, and there is a rhythm to clinical care 
+that moves whether or not you have finished your sentence.
 
-She had taught herself to read at forty-three, raised four children under a 
-regime that made both things harder, and had opinions about bread she would 
-share with anyone who asked. Almost nobody asked. Staff moved around her 
-efficiently. Vitals, notes, next room. She was in the background of her own 
-story.
+Turn. Dress. Next room.
 
-I thought about all the years I had watched this happen and said nothing. 
-All the dinners, the waiting rooms, the hallways where someone sat on the 
-edges of things and nobody turned toward them.
+I stayed when I could. It wasn't enough. I watched her try to be heard 
+and I couldn't slow the rhythm either, and I carried that with me. I still do, 
+some days. Not as a critique, nurses carry more than anyone should have to with a lot of care centers putting nurses in charge of 1-20 caseloads in these care centers, but 
+as a question I haven't been able to put down: what does it cost someone to 
+speak and not be heard? To be tended to but not seen?
 
 There was a man on the unit who hadn't spoken in weeks by the time I met 
 him. I sat with him one afternoon longer than I needed to. He looked out 
@@ -42,7 +43,7 @@ felt important, and that nobody else in the building knew about it.
 
 We have decided, somewhere along the way, that attention is a resource best 
 spent efficiently. Efficiency has very little patience for the elderly, the 
-nonverbal, the ones who need a moment to find their words. So we learn to 
+nonverbal, the ones who need a moment to find their words, the timid. So we learn to 
 move around them. We get good at it. We stop noticing we're doing it.
 
 Curiosity gets talked about like a professional virtue, an ultimate move you 
@@ -51,10 +52,9 @@ someone whose life looks nothing like yours, following a story that doesn't
 resolve into a lesson, that is something harder and quieter. Most of us stop 
 exactly there. At the edge of easy.
 
-The woman who crossed the Carpathians died the spring after I met her. I 
-think about her more than I expected to. I think about what it means that 
-her stories found their way out through a specific Tuesday, a nervous 
-twenty-year-old, a cuff on an arm, a number on a screen.
+I think about that woman often. About what she was trying to say and whether 
+she ever found someone to say it to. About how much of a person can go 
+unwitnessed, quietly, in the middle of a room full of people doing their jobs.
 
 That feels like too thin a thread for a life.
 
@@ -62,6 +62,6 @@ I noticed it as a kid and felt bad and kept moving, like everyone else.
 I don't want to keep moving. I want to be the person who asks, who stays, 
 who catches the thing someone points at and says yes, I see it too.
 
-It's a small thing. It costs almost nothing. 
+Attention is a small thing. It costs almost nothing. 
 
 I think we've just forgotten that it's ours to give.

@@ -34,8 +34,9 @@ function markdownToHtml(md) {
     .join('\n');
 }
 
-export default function BlogPost({ params }) {
-  const post = getPost(params.slug);
+export default async function BlogPost({ params }) {
+  const { slug } = await params;
+  const post = getPost(slug);
 
   if (!post) return (
     <div style={{ padding: 'clamp(60px, 8vw, 100px) calc(var(--border-width) + 48px)' }}>

@@ -6,11 +6,12 @@ import { usePathname } from 'next/navigation';
 const menuItems = [
   { label: 'About', href: '/about' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Recipes', href: '/recipes' },
   { label: 'Projects', href: '/projects' },
+  { label: 'Recipes', href: '/recipes' },
+  { label: 'Visual', href: '/visual' },
 ];
 
-/* Small SVG embroidery motif shown beside each hovered item */
+/* small SVG embroidery motif shown beside each hovered item */
 function MotifIcon() {
   return (
     <img src="/patterns/patt7.png" alt="" style={{ width: '18px', height: '18px', objectFit: 'contain', flexShrink: 0 }} />
@@ -24,7 +25,7 @@ export default function HamburgerMenu() {
 
   return (
     <div style={{ position: 'relative' }}>
-      {/* Hamburger button */}
+      {/* hamby button */}
       <button
         onClick={() => setOpen(!open)}
         aria-label="Toggle navigation menu"
@@ -50,7 +51,7 @@ export default function HamburgerMenu() {
         ))}
       </button>
 
-      {/* Dropdown — anchored to right edge */}
+      {/* dropdown, anchored to right edge (WORKING, STILL LOOKS KIND OF GOOFY) */}
       <div style={{
         position: 'absolute',
         top: 'calc(100% + 8px)',
@@ -102,7 +103,7 @@ export default function HamburgerMenu() {
         })}
       </div>
 
-      {/* Click-away overlay */}
+      {/* clickaway overlay */}
       {open && (
         <div
           onClick={() => setOpen(false)}
