@@ -4,6 +4,7 @@ const categories = [
   { label: 'Blog',     href: '/blog' },
   { label: 'Recipes',  href: '/recipes' },
   { label: 'Projects', href: '/projects' },
+  { label: 'Visual',   href: '/visual' },
   { label: 'About',    href: '/about' },
 ];
 
@@ -28,7 +29,7 @@ function buildItems() {
 }
 
 const items = buildItems();
-const doubled = [...items, ...items, ...items]; //tripled, was lagging out
+const doubled = [...items, ...items]; /* duplicate for seamless loop */
 
 export default function NavMarquee() {
   return (
