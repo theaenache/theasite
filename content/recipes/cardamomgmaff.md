@@ -5,7 +5,7 @@ excerpt: "A finely ground light roast espresso blended with cardamom, poured ove
 cover: "/images/recipes/cardamom-affogato.jpg"
 cuisine: "Fusion"
 cookTime: "4 hrs (but super quick if your ice cream is prepped in advance!!)"
-servings: 2
+servings: 4 (one for each of my roommates :)
 story: "Inspired by the PCB Goldfinger from An's Electronics Repair, a golden milk gelato built on a water infusion of turmeric, ginger, cinnamon, cardamom, and nutmeg, finished with barista oat milk and agave. The cardamom in the espresso echoes the cardamom in the gelato, making the two feel like one dish rather than two things poured together. I tried to replicate PCB Goldfinger as best as I could, but if you're located in the San Diego area please just go buy it, it's incredible."
 ---
 
@@ -29,13 +29,13 @@ story: "Inspired by the PCB Goldfinger from An's Electronics Repair, a golden mi
 ## Instructions
 
 ### Make the golden milk base
-Combine the oat milk, coconut cream, turmeric, ginger, cinnamon sticks, nutmeg, and crushed cardamom in a saucepan over medium heat. Warm until steaming, stirring frequently. Do not boil.
+Combine the oat milk, coconut cream, turmeric, ginger, cinnamon sticks, nutmeg, and crushed cardamom in a saucepan over medium heat. Warm until steaming, stirring frequently. DO NOT boil.
 
 ### Steep the spices
-Remove from heat and let steep for 15 minutes so the spices fully infuse the milk.
+Remove from heat and let steep for 15 minutes so the spices fully infuse the milk. We want all the flavour we can get. 
 
 ### Strain and sweeten
-Strain through a fine mesh strainer into a clean saucepan, pressing on the solids. Return to medium-low heat and whisk in the agave syrup.
+Strain through a fine mesh strainer into a clean saucepan, pressing on the solids. Return to medium-low heat and whisk in the agave syrup. You are free to substitute your preferred sweetener here, agave is just my preference but I assume maple syrup would also be lovely.
 
 ### Thicken the base
 Mix the cornstarch with 2 tbsp cold oat milk until smooth. Whisk into the warm base and stir constantly until thickened slightly, about 3 minutes. Remove from heat.
@@ -44,16 +44,17 @@ Mix the cornstarch with 2 tbsp cold oat milk until smooth. Whisk into the warm b
 Pour into a clean bowl, cover with plastic wrap pressed directly onto the surface, and refrigerate until completely cold.
 
 ### Churn
-Churn in your ice cream maker according to manufacturer instructions until thick and creamy. If you don't have one, pour into a shallow dish and whisk every 30 minutes for 3 hours.
+Churn in your ice cream maker according to manufacturer instructions until thick and creamy. If you don't have one, pour into a shallow dish and whisk every 30 minutes for 3 hours, good luck lol. 
 
 ### Freeze
-Transfer to a container and freeze until firm.
+Transfer to a container and freeze until firm, unless you like your soft serve falling off the bone in which case just pray it doesn't melt while you pull your espresso. 
 
 ### Grind the espresso
-Remove the seeds from the cardamom pods and add them to the espresso beans. Grind together on a fine espresso setting. The cardamom should be fully incorporated, not chunky.
+Remove the seeds from the cardamom pods and add them to the espresso beans. Grind together on a fine espresso setting. The cardamom should be fully incorporated. Feel free to vary how much cardamom you're adding. Sometimes I love adding rose here as well. 
 
 ### Pull the shot
-Pull a double shot immediately before serving, about 60ml. It should be hot, aromatic, and bright.
+ Grind 18-19g of beans. Fill the porto filter with the 18g of ground beans, and ensure you are breaking up any chunks with a small whisk. Level after, and pack it down, placing into the espresso machine and turning until you get resistance. Press double shot to pull your espresso. Ensure you only pull between 35-40g of espresso. Shouts out to Noelle for this method, love you. 
+ ^Alternatively, you can use a moka pot. Just pack the beans section of your pot with the grounds, and please don't crank it on high. Keep it at a respectful 7/10 heat. 
 
 ### Assemble
-Scoop the golden milk gelato into a chilled glass or bowl. Pour the hot cardamom espresso shot directly over the top and serve immediately.
+Scoop the golden milk gelato into your preferred vessel. I like a cute little cup. I carve out an opening for the espresso in the mittle of my gelato, and put the warm gelato right on top. Enjoy :D 
