@@ -9,12 +9,10 @@ tag: "Creative Writing"
 I noticed it as a kid before I had words for it. The way adults would speak 
 around older people instead of to them. The way a room would keep moving while 
 someone sat in it, waiting. I would watch this happen and feel something 
-uncomfortable in my chest that I didn't know what to do with.
+uncomfortable in my chest that I didn't know what to do with. I still don't, really. But I've stopped looking away from it.
 
-I still don't, really. But I've stopped looking away from it.
-
-When I trained as a CNA I sat with a woman who had a stage four pressure ulcer 
-and could no longer manage her continence on her own. She was in pain -- the 
+When I trained as a CNA I sat with a woman who had been admitted with a stage four pressure ulcer 
+and could no longer manage her continence on her own. She was in the 
 kind that reorganizes a person, and she would try to tell you that. She had a 
 way of reaching for the words slowly, like she was building something, trying 
 to make someone understand what it felt like to be inside her body. Staff were 
@@ -27,8 +25,7 @@ Turn. Vitals. Meds. Next room.
 
 I stayed when I could, but it wasn't enough. I watched her try to be heard 
 and I couldn't slow the rhythm either, and I carried that with me. I still do, 
-some days. Not as a critique, nurses carry more than anyone should have to, but 
-as a question I haven't been able to put down: what does it cost someone to 
+some days. Not as a critique, nurses carry more than anyone should have to, but a question I haven't been able to put down: what does it cost someone to 
 speak and not be heard? To be tended to but not seen? 
 
 There was a man on the unit who hadn't spoken in weeks by the time I met 
