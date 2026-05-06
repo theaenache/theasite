@@ -1,17 +1,22 @@
 'use client';
-import { useState, Fragment } from 'react';
+import { useState } from 'react';
 import { MinimalFooter } from '@/components/Footer';
 
 const projects = [
   {
     id: 1,
-    title: 'Multi-Scale SARS-CoV-2 Model',
-    year: '2024–2025',
-    tags: ['Computational Epidemiology', 'Mathematical Modeling'],
-    description: 'A within-host and between-host computational model of SARS-CoV-2 transmission dynamics, developed in collaboration with the DiMo Lab under PI Naveen Vaidya.',
-    collaborators: 'Naveen Vaidya, SDSU DiMo Lab',
+    title: 'Multi-Scale SARS-CoV-2 Transmission Model',
+    year: '2025 — Present',
+    tags: ['Computational Epidemiology', 'Mathematical Modeling', 'MATLAB', 'Python'],
+    description: 'In the fall of 2025 I reached out to Dr. Naveen Vaidya after developing an interest in the mathematics underlying epidemiological modeling. We had a series of conversations about the scope of what I wanted to learn, and together decided to build a modeling framework connecting within-host viral dynamics to between-host transmission risk in SARS-CoV-2, using experimental ferret data.\n\nI developed the model independently under Dr. Vaidya\'s guidance, working across MATLAB and Python. The project is ongoing and details are being withheld ahead of publication.\n\nIn Spring 2026 I gave an oral presentation at the S3 Student Research Symposium, and presented a poster at the San Diego Epidemiology Exchange.',
+    collaborators: 'PI: Naveen Vaidya · SDSU DiMo Lab',
     link: null,
     cover: null,
+    images: [
+      { src: '/images/projects/s31.jpeg', caption: 'Oral presentation at the S3 Student Research Symposium, Spring 2026' },
+      { src: '/images/projects/s32.jpeg', caption: 'Poster presentation at the San Diego Epidemiology Exchange, 2026' },
+      { src: '/images/projects/epixchange.jpeg', caption: 'San Diego Epidemiology Exchange, 2026' },
+    ],
   },
   {
     id: 2,
@@ -22,6 +27,7 @@ const projects = [
     collaborators: 'Eyal Oren, Miguel Angel Zavala Perez',
     link: null,
     cover: null,
+    images: [],
   },
   {
     id: 3,
@@ -32,6 +38,7 @@ const projects = [
     collaborators: null,
     link: null,
     cover: null,
+    images: [],
   },
 ];
 
@@ -47,25 +54,8 @@ const patternImages = [
 
 function PatternTile({ index }) {
   return (
-    <div style={{
-      width: '100%',
-      height: '100%',
-      background: '#FFFBF0',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '12%',
-    }}>
-      <img
-        src={patternImages[index % patternImages.length]}
-        alt=""
-        style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'contain',
-          display: 'block',
-        }}
-      />
+    <div style={{ width: '100%', height: '100%', background: '#FFFBF0', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '12%' }}>
+      <img src={patternImages[index % patternImages.length]} alt="" style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}/>
     </div>
   );
 }
@@ -83,9 +73,9 @@ function ProjectModal({ project, onClose }) {
       <div onClick={e => e.stopPropagation()} style={{
         background: '#FFFBF0',
         border: '0.75px solid rgba(84,22,29,0.25)',
-        maxWidth: '560px', width: '100%',
+        maxWidth: '620px', width: '100%',
         padding: '48px', position: 'relative',
-        maxHeight: '80vh', overflowY: 'auto',
+        maxHeight: '85vh', overflowY: 'auto',
       }}>
         <button onClick={onClose} style={{
           position: 'absolute', top: '20px', right: '20px',
@@ -95,19 +85,15 @@ function ProjectModal({ project, onClose }) {
         }}>
           CLOSE ×
         </button>
-        <p style={{
-          fontFamily: "'Cinzel', serif", fontSize: '10px',
-          letterSpacing: '2px', color: 'rgba(84,22,29,0.45)', marginBottom: '12px',
-        }}>
+
+        <p style={{ fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '2px', color: 'rgba(84,22,29,0.45)', marginBottom: '12px' }}>
           {project.year}
         </p>
-        <h2 style={{
-          fontFamily: "'Cormorant Garamond', serif",
-          fontSize: '28px', fontWeight: '500',
-          color: '#54161D', lineHeight: '1.2', marginBottom: '20px',
-        }}>
+
+        <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '28px', fontWeight: '500', color: '#54161D', lineHeight: '1.2', marginBottom: '20px' }}>
           {project.title}
         </h2>
+
         {project.tags?.length > 0 && (
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
             {project.tags.map(tag => (
@@ -122,30 +108,56 @@ function ProjectModal({ project, onClose }) {
             ))}
           </div>
         )}
-        <p style={{
-          fontFamily: "'Inter', sans-serif", fontWeight: '300',
-          fontSize: '14px', color: 'rgba(84,22,29,0.8)',
-          lineHeight: '1.75', marginBottom: '20px',
-        }}>
-          {project.description}
-        </p>
+
+        {/* Description with line breaks */}
+        <div style={{ marginBottom: '24px' }}>
+          {project.description.split('\n\n').map((para, i) => (
+            <p key={i} style={{
+              fontFamily: "'Inter', sans-serif", fontWeight: '300',
+              fontSize: '14px', color: 'rgba(84,22,29,0.8)',
+              lineHeight: '1.75', marginBottom: '14px',
+            }}>
+              {para}
+            </p>
+          ))}
+        </div>
+
         {project.collaborators && (
-          <p style={{
-            fontFamily: "'DM Sans', sans-serif", fontSize: '12px',
-            color: 'rgba(84,22,29,0.55)', marginBottom: '20px',
-          }}>
-            With {project.collaborators}
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '12px', color: 'rgba(84,22,29,0.55)', marginBottom: '28px' }}>
+            {project.collaborators}
           </p>
         )}
+
+        {/* Photo gallery */}
+        {project.images?.length > 0 && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginTop: '8px' }}>
+            <div style={{ borderTop: '0.5px solid rgba(84,22,29,0.15)', paddingTop: '24px' }}>
+              <p style={{ fontFamily: "'Cinzel', serif", fontSize: '9px', letterSpacing: '2px', color: 'rgba(84,22,29,0.4)', marginBottom: '16px' }}>
+                PHOTOS
+              </p>
+              {project.images.map((img, i) => (
+                <div key={i} style={{ marginBottom: '20px' }}>
+                  <img src={img.src} alt={img.caption} style={{ width: '100%', height: 'auto', display: 'block', marginBottom: '8px' }}/>
+                  {img.caption && (
+                    <p style={{ fontFamily: "'Cinzel', serif", fontSize: '9px', letterSpacing: '1.5px', color: 'rgba(84,22,29,0.4)', textAlign: 'center' }}>
+                      {img.caption}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {project.link && (
           <a href={project.link} target="_blank" rel="noopener noreferrer" style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',
             fontFamily: "'Cinzel', serif", fontSize: '10px',
             letterSpacing: '1.5px', color: '#54161D',
             border: '0.5px solid rgba(84,22,29,0.4)',
-            padding: '10px 20px', textDecoration: 'none',
+            padding: '10px 20px', textDecoration: 'none', marginTop: '16px',
           }}>
-            VIEW PROJECT ↗
+            VIEW PROJECT
           </a>
         )}
       </div>
@@ -189,20 +201,15 @@ export default function ProjectsPage() {
       `}</style>
 
       <div style={{ padding: 'clamp(60px, 8vw, 100px) calc(var(--border-width) + 48px)' }}>
-        <p style={{
-          fontFamily: "'Cinzel', serif", fontSize: '11px',
-          letterSpacing: '3px', color: 'rgba(84,22,29,0.5)',
-          marginBottom: '48px',
-        }}>
+        <p style={{ fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '3px', color: 'rgba(84,22,29,0.5)', marginBottom: '48px' }}>
           PROJECTS
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2px' }}>
           {projects.map((project, i) => (
-            <Fragment key={project.id}>
-              {i % 2 === 0 ? (
-                <>
-                  <div key={`pat-${i}`} className="pattern-tile">
+            i % 2 === 0 ? (
+              <>
+                <div key={`pat-${i}`} className="pattern-tile">
                   <PatternTile index={i} />
                 </div>
                 <div key={`proj-${i}`} className="project-tile" onClick={() => setSelected(project)}>
@@ -226,8 +233,7 @@ export default function ProjectsPage() {
                   <PatternTile index={i} />
                 </div>
               </>
-              )}
-            </Fragment>
+            )
           ))}
         </div>
       </div>

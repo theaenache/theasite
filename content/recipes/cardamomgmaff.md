@@ -5,7 +5,7 @@ excerpt: "A finely ground light roast espresso blended with cardamom, poured ove
 cover: "/images/recipes/cardamom-affogato.jpg"
 cuisine: "Fusion"
 cookTime: "4 hrs (but super quick if your ice cream is prepped in advance!!)"
-servings: 4 (one for each of my roommates :)
+servings: 2
 story: "Inspired by the PCB Goldfinger from An's Electronics Repair, a golden milk gelato built on a water infusion of turmeric, ginger, cinnamon, cardamom, and nutmeg, finished with barista oat milk and agave. The cardamom in the espresso echoes the cardamom in the gelato, making the two feel like one dish rather than two things poured together. I tried to replicate PCB Goldfinger as best as I could, but if you're located in the San Diego area please just go buy it, it's incredible."
 ---
 
@@ -23,7 +23,7 @@ story: "Inspired by the PCB Goldfinger from An's Electronics Repair, a golden mi
 
 ## Espresso Ingredients
 
-- 18g light roast espresso beans
+- 36g light roast espresso beans
 - 2 cardamom pods
 
 ## Instructions
@@ -53,7 +53,7 @@ Transfer to a container and freeze until firm, unless you like your soft serve f
 Remove the seeds from the cardamom pods and add them to the espresso beans. Grind together on a fine espresso setting. The cardamom should be fully incorporated. Feel free to vary how much cardamom you're adding. Sometimes I love adding rose here as well. 
 
 ### Pull the shot
- Grind 18-19g of beans. Fill the porto filter with the 18g of ground beans, and ensure you are breaking up any chunks with a small whisk. Level after, and pack it down, placing into the espresso machine and turning until you get resistance. Press double shot to pull your espresso. Ensure you only pull between 35-40g of espresso. Shouts out to Noelle for this method, love you. 
+ Grind 18-19g of beans. Fill the porto filter with the 18g of ground beans, and ensure you are breaking up any chunks with a small whisk. Level after, and pack it down, placing into the espresso machine and turning until you get resistance. Press double shot to pull your espresso. Ensure you only pull between 35-40g of espresso. Shouts out to Noelle for this method, love you. Do this twice, one for each serving. 
  ^Alternatively, you can use a moka pot. Just pack the beans section of your pot with the grounds, and please don't crank it on high. Keep it at a respectful 7/10 heat. 
 
 ### Assemble
