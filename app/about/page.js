@@ -9,7 +9,7 @@ const affiliations = [
   {
     role: 'Research Assistant',
     org: 'SDSU Imperial Valley Prevention Research Center',
-    place: 'PI: Eyal Oren, Miguel Angel Zavala Perez ·  SDSU-IV',
+    place: 'PI: Eyal Oren, Miguel Angel Zavala Perez · SDSU-IV',
   },
   {
     role: 'Visiting Scholar',
@@ -25,7 +25,7 @@ const affiliations = [
     role: 'Research and Grant Project Analyst',
     org: 'Proactive FQHC',
     place: 'Sunnyvale, CA',
-  }
+  },
 ];
 
 export default function AboutPage() {
@@ -66,9 +66,9 @@ export default function AboutPage() {
 
         <div style={{
           display: 'grid',
-          //edit line below for headshotsize
-          gridTemplateColumns: 'clamp(380px, 34%, 320px) 1fr',
-          gap: '56px', alignItems: 'start',
+          gridTemplateColumns: 'clamp(220px, 32%, 340px) 1fr',
+          gap: '56px',
+          alignItems: 'start',
           marginBottom: '80px',
         }}>
           {/* Portrait */}
@@ -106,7 +106,7 @@ export default function AboutPage() {
               In California, the calculus was different but the conclusion was the same. The Bay Area taught me to believe in what technology could do. I grew up taking things apart with my father, watching the world accelerate, absorbing the genuine conviction that innovation could solve things. It also showed me, slowly and then all at once, who that innovation was actually built for. A different flavor of institutional greed, a different set of people left outside it.
             </p>
             <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8' }}>
-              I exist somewhere between those two places. Not quite from either; both on the academic, and on the cultural side. That position used to feel like a problem, and I am proud to report that I have since found my strength in it. 
+              I exist somewhere between those two places. Not quite from either; both on the academic, and on the cultural side. That position used to feel like a problem, and I am proud to report that I have since found my strength in it.
             </p>
             <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8' }}>
               I'm Thea Enache, an undergraduate at San Diego State University working on completing dual degrees in Public Health and Mathematical Data Science + Computer Science, with a minor in Statistics. I work at the intersection of computational modeling, AI, and health equity. I am trying to build systems that are designed for everyone from the start, because I have seen what happens when they aren't.
@@ -115,7 +115,7 @@ export default function AboutPage() {
               I believe public institutions are where this work belongs. In this setting, serving everyone should be the design constraint. The math has to work for the person who can't bribe anyone. It has to work for the people my grandparents were.
             </p>
             <p style={{ color: 'rgba(84,22,29,0.8)', lineHeight: '1.8' }}>
-              That's what I'm building toward. Please feel free to pick around this page to follow along on my journey :) 
+              That's what I'm building toward. Please feel free to pick around this page to follow along on my journey :)
             </p>
 
             <div style={{ marginTop: '36px' }}>
