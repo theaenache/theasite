@@ -6,16 +6,16 @@ const projects = [
   {
     id: 1,
     title: 'Multi-Scale SARS-CoV-2 Transmission Model',
-    year: '2025 — Present',
+    year: 'July 2025 — Present',
     tags: ['Computational Epidemiology', 'Mathematical Modeling', 'MATLAB', 'Python'],
     description: 'In the fall of 2025 I reached out to Dr. Naveen Vaidya after developing an interest in the mathematics underlying epidemiological modeling. We had a series of conversations about the scope of what I wanted to learn, and together decided to build a modeling framework connecting within-host viral dynamics to between-host transmission risk in SARS-CoV-2, using experimental ferret data.\n\nI developed the model independently under Dr. Vaidya\'s guidance, working across MATLAB and Python. The project is ongoing and details are being withheld ahead of publication.\n\nIn Spring 2026 I gave an oral presentation at the S3 Student Research Symposium, and presented a poster at the San Diego Epidemiology Exchange.',
     collaborators: 'PI: Naveen Vaidya · SDSU DiMo Lab',
     link: null,
     cover: null,
     images: [
-      { src: '/images/projects/s31.jpeg', caption: 'Oral presentation at the S3 Student Research Symposium, Spring 2026' },
-      { src: '/images/projects/s32.jpeg', caption: 'Poster presentation at the San Diego Epidemiology Exchange, 2026' },
-      { src: '/images/projects/epixchange.jpeg', caption: 'San Diego Epidemiology Exchange, 2026' },
+      { src: '/projects/s31.jpeg', caption: 'Oral presentation at the S3 Student Research Symposium, Spring 2026' },
+      { src: '/projects/s32.jpeg', caption: 'Poster presentation at the San Diego Epidemiology Exchange, 2026' },
+      { src: '/projects/epixchange.jpeg', caption: 'San Diego Epidemiology Exchange, 2026' },
     ],
   },
   {

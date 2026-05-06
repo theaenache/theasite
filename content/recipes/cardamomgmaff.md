@@ -29,7 +29,7 @@ story: "Inspired by the PCB Goldfinger from An's Electronics Repair, a golden mi
 ## Instructions
 
 ### Make the golden milk base
-Combine the oat milk, coconut cream, turmeric, ginger, cinnamon sticks, nutmeg, and crushed cardamom in a saucepan over medium heat. Warm until steaming, stirring frequently. DO NOT boil.
+Combine the oat milk, coconut cream, turmeric, ginger, cinnamon sticks, nutmeg, and half of the crushed cardamom in a saucepan over medium heat. Warm until steaming, stirring frequently. DO NOT boil.
 
 ### Steep the spices
 Remove from heat and let steep for 15 minutes so the spices fully infuse the milk. We want all the flavour we can get. 
@@ -50,11 +50,10 @@ Churn in your ice cream maker according to manufacturer instructions until thick
 Transfer to a container and freeze until firm, unless you like your soft serve falling off the bone in which case just pray it doesn't melt while you pull your espresso. 
 
 ### Grind the espresso
-Remove the seeds from the cardamom pods and add them to the espresso beans. Grind together on a fine espresso setting. The cardamom should be fully incorporated. Feel free to vary how much cardamom you're adding. Sometimes I love adding rose here as well. 
+Add the other half of the cardamom to the espresso beans. Grind together on a fine espresso setting. The cardamom should be fully incorporated. Feel free to vary how much cardamom you're adding per your preferences. Sometimes I love adding rose here as well. 
 
 ### Pull the shot
- Grind 18-19g of beans. Fill the porto filter with the 18g of ground beans, and ensure you are breaking up any chunks with a small whisk. Level after, and pack it down, placing into the espresso machine and turning until you get resistance. Press double shot to pull your espresso. Ensure you only pull between 35-40g of espresso. Shouts out to Noelle for this method, love you. Do this twice, one for each serving. 
- ^Alternatively, you can use a moka pot. Just pack the beans section of your pot with the grounds, and please don't crank it on high. Keep it at a respectful 7/10 heat. 
+ Grind 18-19g of beans. Fill the porto filter with the 18g of ground beans, and ensure you are breaking up any chunks with a small whisk. Level after, and pack it down, placing into the espresso machine and turning until you get resistance. Press double shot to pull your espresso. Ensure you only pull between 35-40g of espresso. Shouts out to Noelle for this method, love you. Do this twice, one for each serving. Alternatively, you can use a moka pot. Just pack the beans section of your pot with the grounds, and please don't crank it on high. Keep it at a respectful 7/10 heat. 
 
 ### Assemble
 Scoop the golden milk gelato into your preferred vessel. I like a cute little cup. I carve out an opening for the espresso in the mittle of my gelato, and put the warm gelato right on top. Enjoy :D 
