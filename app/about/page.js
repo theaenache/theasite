@@ -64,7 +64,7 @@ export default function AboutPage() {
           ABOUT
         </p>
 
-        <div style={{
+        <div className="about-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'clamp(220px, 32%, 340px) 1fr',
           gap: '56px',

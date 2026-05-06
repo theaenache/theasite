@@ -13,8 +13,13 @@ const borderStyle = {
 export default function RomanianBorder() {
   return (
     <>
-      <div style={{ ...borderStyle, left: 0 }} />
-      <div style={{ ...borderStyle, right: 0, transform: 'scaleX(-1)' }} />
+      <style>{`
+        @media (max-width: 768px) {
+          .romanian-border { display: none !important; }
+        }
+      `}</style>
+      <div className="romanian-border" style={{ ...borderStyle, left: 0 }} />
+      <div className="romanian-border" style={{ ...borderStyle, right: 0, transform: 'scaleX(-1)' }} />
     </>
   );
 }
