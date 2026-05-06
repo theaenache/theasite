@@ -14,7 +14,7 @@ uncomfortable in my chest that I didn't know what to do with.
 I still don't, really. But I've stopped looking away from it.
 
 When I trained as a CNA I sat with a woman who had a stage four pressure ulcer 
-and could no longer manage her continence on her own. She was in real pain—the 
+and could no longer manage her continence on her own. She was in pain -- the 
 kind that reorganizes a person, and she would try to tell you that. She had a 
 way of reaching for the words slowly, like she was building something, trying 
 to make someone understand what it felt like to be inside her body. Staff were 
@@ -23,11 +23,13 @@ that moves whether or not you have finished your sentence.
 
 Turn. Dress. Next room.
 
-I stayed when I could. It wasn't enough. I watched her try to be heard 
+Turn. Vitals. Meds. Next room. 
+
+I stayed when I could, but it wasn't enough. I watched her try to be heard 
 and I couldn't slow the rhythm either, and I carried that with me. I still do, 
-some days. Not as a critique, nurses carry more than anyone should have to with a lot of care centers putting nurses in charge of 1-20 caseloads in these care centers, but 
+some days. Not as a critique, nurses carry more than anyone should have to, but 
 as a question I haven't been able to put down: what does it cost someone to 
-speak and not be heard? To be tended to but not seen?
+speak and not be heard? To be tended to but not seen? 
 
 There was a man on the unit who hadn't spoken in weeks by the time I met 
 him. I sat with him one afternoon longer than I needed to. He looked out 
