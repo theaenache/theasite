@@ -7,7 +7,7 @@ cover: "/images/visual/tjhomebuild/tjhomebuild-b.png"
 sketch: "/images/visual/tjhomebuild/tjhomebuild-s.png"
 ---
 
-![Gael and I <3](/images/visual/tjhomebuild/mengee.JPEG)
+![Gael and I <3](/images/visual/tjhomebuild/meng5.JPEG)
 
 
 ![Gael and Julian flooring it](/images/visual/tjhomebuild/whip.JPEG)
@@ -28,7 +28,7 @@ sketch: "/images/visual/tjhomebuild/tjhomebuild-s.png"
 ![what a beautiful day](/images/visual/tjhomebuild/sky.JPEG)
 
 
-![<3:,)](/images/visual/tjhomebuild/luvg.JPG)
+![<3:,)](/images/visual/tjhomebuild/luvg.JPEG)
 
 
 ![eli and i signed eachothers jerseys](/images/visual/tjhomebuild/eli.JPEG)
