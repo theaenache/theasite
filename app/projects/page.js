@@ -14,7 +14,7 @@ const projects = [
     cover: null,
     images: [
       { src: '/projects/s31.jpeg', caption: 'Oral presentation at the S3 Student Research Symposium, Spring 2026' },
-      { src: '/projects/s32.jpeg', caption: 'Poster presentation at the San Diego Epidemiology Exchange, 2026' },
+      { src: '/projects/s32.jpeg', caption: 'DiMo Lab at S3 Student Research Symposium, 2026' },
       { src: '/projects/epixchange.jpeg', caption: 'San Diego Epidemiology Exchange, 2026' },
     ],
   },
@@ -31,12 +31,12 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Your Next Project',
-    year: '2025',
-    tags: ['Add', 'Tags'],
+    title: 'Sekeh Lab Deep Learning Bootcamp',
+    year: 'July 25th, 2025',
+    tags: ['Teaching', 'Neural Networks'],
     description: 'Replace this with your project description.',
-    collaborators: null,
-    link: null,
+    collaborators: 'Jake Basile, Saad Alrajhi, Francis Fernandez, Joshua Andle, Mary Isabelle Wisell, Aditi Naiknaware, Dr. Salimeh Sekeh' 
+    link: https://www.youtube.com/watch?v=uyqLTw3djKk,
     cover: null,
     images: [],
   },
