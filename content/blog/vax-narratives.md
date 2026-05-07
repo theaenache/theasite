@@ -1,7 +1,7 @@
 ---
 title: "Some thoughts on the narratives circulating about vaccination rn"
 date: "2025-12-07"
-excerpt: "When you decide to skip a flu shot, or delay a pneumococcal vaccine, you probably aren't thinking about the global antibiotic crisis. The cost of the optional mindset is not theoretical anymore."
+excerpt: "The case against skipping vaccines is usually made on individual risk. This piece explores a different one: what happens with antibiotics and AMR when we do."
 cover: ""
 tag: "Reflection"
 ---
