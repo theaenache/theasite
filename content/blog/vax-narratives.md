@@ -1,7 +1,7 @@
 ---
 title: "Some thoughts on the narratives circulating about vaccination rn"
 date: "2025-12-07"
-excerpt: "The case against skipping vaccines is usually made on individual risk. This piece explores a different one: what happens with antibiotics and AMR when we do."
+excerpt: "The case against skipping vaccines is usually made on individual risk. This piece explores what happens with antibiotics and AMR within this context."
 cover: ""
 tag: "Reflection"
 ---
