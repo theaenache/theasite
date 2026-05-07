@@ -4,7 +4,7 @@ const affiliations = [
   {
     role: 'Research Assistant',
     org: 'SDSU Imperial Valley Prevention Research Center',
-    place: 'PI: Eyal Oren, Miguel Angel Zavala Perez · SDSU-IV',
+    place: 'PI: Eyal Oren, Miguel Angel Zavala Perez · SDSU-IV · School of Public Health',
     url: 'https://ivprc.sdsu.edu/',
   },
   {
@@ -16,7 +16,7 @@ const affiliations = [
   {
     role: 'Researcher',
     org: 'Sekeh Lab',
-    place: 'PI: Salimeh Yasaei Sekeh · SDSU',
+    place: 'PI: Salimeh Yasaei Sekeh · SDSU · Computer Science Department',
     url: 'https://salimehsekeh.wixsite.com/sekeh-lab',
   },
   {
@@ -28,7 +28,7 @@ const affiliations = [
   {
     role: 'Research Assistant',
     org: 'DiMo Lab',
-    place: 'PI: Naveen Vaidya · SDSU',
+    place: 'PI: Naveen Vaidya · SDSU · Applied Mathematics Department',
     url: 'https://nvaidya.sdsu.edu/DiMoLab.html',
   },
 ];
