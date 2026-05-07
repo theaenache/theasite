@@ -9,8 +9,9 @@ const projects = [
     year: 'July 2025 — Present',
     tags: ['Computational Epidemiology', 'Mathematical Modeling', 'MATLAB', 'Python'],
     description: 'In the fall of 2025 I reached out to Dr. Naveen Vaidya after developing an interest in the mathematics underlying epidemiological modeling. We had a series of conversations about the scope of what I wanted to learn, and together decided to build a modeling framework connecting within-host viral dynamics to between-host transmission risk in SARS-CoV-2, using experimental ferret data.\n\nI developed the model independently under Dr. Vaidya\'s guidance, working across MATLAB and Python. The project is ongoing and details are being withheld ahead of publication.\n\nIn Spring 2026 I gave an oral presentation at the S3 Student Research Symposium, and presented a poster at the San Diego Epidemiology Exchange.',
-    collaborators: 'PI: Naveen Vaidya · SDSU DiMo Lab',
+    collaborators: 'PI: Naveen K. Vaidya · SDSU DiMo Lab',
     link: null,
+    linkLabel: null,
     cover: null,
     images: [
       { src: '/projects/s31.jpeg', caption: 'Oral presentation at the S3 Student Research Symposium, Spring 2026' },
@@ -26,17 +27,19 @@ const projects = [
     description: 'fill deets',
     collaborators: 'Eyal Oren, Miguel Angel Zavala Perez',
     link: null,
+    linkLabel: null,
     cover: null,
     images: [],
   },
   {
     id: 3,
     title: 'Sekeh Lab Deep Learning Bootcamp',
-    year: 'July 25th, 2025',
-    tags: ['Teaching', 'Neural Networks'],
-    description: 'Replace this with your project description.',
-    collaborators: 'Jake Basile, Saad Alrajhi, Francis Fernandez, Joshua Andle, Mary Isabelle Wisell, Aditi Naiknaware, Dr. Salimeh Sekeh' 
-    link: https://www.youtube.com/watch?v=uyqLTw3djKk,
+    year: 'July 2025',
+    tags: ['Teaching', 'Neural Networks', 'Creative Direction', 'NSF'],
+    description: 'In July 2025 I had the chance to be part of the third annual NSF-SDSU-Sekeh Lab Deep Learning Bootcamp. This event brought together students and researchers for a full day of workshops and talks on AI and neural networks, organized by my PI, Dr. Salimeh Yasaei Sekeh, with support from the National Science Foundation.\n\nMy research team, Jake Basile and Saad Alrajhi, and I developed and delivered the opening workshop of the day: Introduction to Neural Networks. It was the first time I had taught something I had learned in a setting like this. We also had guest speakers from the University of Utah, UT Austin, Voxel51, and SDSU presenting on advanced AI topics throughout the afternoon.\n\nBeyond the research side, I also designed the bootcamp logo, the Sekeh Lab logo, t-shirts, and handouts for the event. Getting to contribute creatively to something academic was very fun :)',
+    collaborators: 'PI: Salimeh Yasaei Sekeh · Jake Basile, Saad Alrajhi, Joshua Andle, Mary Isabelle Wisell, Aditi Naiknaware, Francis Fernandez',
+    link: 'https://www.youtube.com/watch?v=uyqLTw3djKk',
+    linkLabel: 'Watch the Workshop',
     cover: null,
     images: [],
   },
@@ -109,7 +112,6 @@ function ProjectModal({ project, onClose }) {
           </div>
         )}
 
-        {/* Description with line breaks */}
         <div style={{ marginBottom: '24px' }}>
           {project.description.split('\n\n').map((para, i) => (
             <p key={i} style={{
@@ -130,34 +132,33 @@ function ProjectModal({ project, onClose }) {
 
         {/* Photo gallery */}
         {project.images?.length > 0 && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginTop: '8px' }}>
-            <div style={{ borderTop: '0.5px solid rgba(84,22,29,0.15)', paddingTop: '24px' }}>
-              <p style={{ fontFamily: "'Cinzel', serif", fontSize: '9px', letterSpacing: '2px', color: 'rgba(84,22,29,0.4)', marginBottom: '16px' }}>
-                PHOTOS
-              </p>
-              {project.images.map((img, i) => (
-                <div key={i} style={{ marginBottom: '20px' }}>
-                  <img src={img.src} alt={img.caption} style={{ width: '100%', height: 'auto', display: 'block', marginBottom: '8px' }}/>
-                  {img.caption && (
-                    <p style={{ fontFamily: "'Cinzel', serif", fontSize: '9px', letterSpacing: '1.5px', color: 'rgba(84,22,29,0.4)', textAlign: 'center' }}>
-                      {img.caption}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
+          <div style={{ borderTop: '0.5px solid rgba(84,22,29,0.15)', paddingTop: '24px', marginBottom: '24px' }}>
+            <p style={{ fontFamily: "'Cinzel', serif", fontSize: '9px', letterSpacing: '2px', color: 'rgba(84,22,29,0.4)', marginBottom: '16px' }}>
+              PHOTOS
+            </p>
+            {project.images.map((img, i) => (
+              <div key={i} style={{ marginBottom: '20px' }}>
+                <img src={img.src} alt={img.caption} style={{ width: '100%', height: 'auto', display: 'block', marginBottom: '8px' }}/>
+                {img.caption && (
+                  <p style={{ fontFamily: "'Cinzel', serif", fontSize: '9px', letterSpacing: '1.5px', color: 'rgba(84,22,29,0.4)', textAlign: 'center' }}>
+                    {img.caption}
+                  </p>
+                )}
+              </div>
+            ))}
           </div>
         )}
 
+        {/* Link button */}
         {project.link && (
           <a href={project.link} target="_blank" rel="noopener noreferrer" style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',
             fontFamily: "'Cinzel', serif", fontSize: '10px',
-            letterSpacing: '1.5px', color: '#54161D',
-            border: '0.5px solid rgba(84,22,29,0.4)',
-            padding: '10px 20px', textDecoration: 'none', marginTop: '16px',
+            letterSpacing: '1.5px', color: '#FFFBF0',
+            background: '#54161D',
+            padding: '12px 24px', textDecoration: 'none', marginTop: '8px',
           }}>
-            VIEW PROJECT
+            {project.linkLabel || 'VIEW PROJECT'} ↗
           </a>
         )}
       </div>
