@@ -13,7 +13,7 @@ uncomfortable in my chest that I didn't know what to do with. I still don't, rea
 
 When I trained as a CNA I sat with a woman who had been admitted with a stage four pressure ulcer 
 and could no longer manage her continence on her own. She was in the 
-kind that reorganizes a person, and she would try to tell you that. She had a 
+kind of pain that reorganizes a person, and she would try to tell you that. She had a 
 way of reaching for the words slowly, like she was building something, trying 
 to make someone understand what it felt like to be inside her body. Staff were 
 not unkind. But wounds need dressing, and there is a rhythm to clinical care 
