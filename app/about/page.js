@@ -117,7 +117,7 @@ export default function AboutPage() {
               lineHeight: '1.1', marginBottom: '28px',
               textAlign: 'center',
             }}>
-              Thea Enache
+              Thea L. Enache
             </h1>
 
             <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>

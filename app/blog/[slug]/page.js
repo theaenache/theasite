@@ -17,19 +17,22 @@ function markdownToHtml(md) {
     .replace(/^### (.+)$/gm, '<h3>$1</h3>')
     .replace(/^## (.+)$/gm, '<h2>$1</h2>')
     .replace(/^# (.+)$/gm, '<h2>$1</h2>')
+    .replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1"/>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+    .replace(/\*([^*\n]+)\*/g, '<em>$1</em>')
     .replace(/^> (.+)$/gm, '<blockquote><p>$1</p></blockquote>')
     .replace(/^---$/gm, '<hr/>')
     .replace(/^- (.+)$/gm, '<li>$1</li>')
     .replace(/(<li>.*<\/li>\n?)+/g, s => `<ul>${s}</ul>`)
-    .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>')
-    .replace(/!\[(.+?)\]\((.+?)\)/g, '<img src="$2" alt="$1"/>')
     .split(/\n\n+/)
     .map(block => {
-      if (block.match(/^<(h[123]|ul|ol|blockquote|hr|img)/)) return block;
-      if (block.trim() === '') return '';
-      return `<p>${block.replace(/\n/g, ' ')}</p>`;
+      block = block.trim();
+      if (!block) return '';
+      if (block.match(/^<(h[123]|ul|ol|blockquote|hr|img|a)/)) return block;
+      if (block.startsWith('<img')) return block;
+      return `<p>${block.replace(/  \n/g, '<br/>').replace(/\n/g, '<br/>')}</p>`;
     })
     .join('\n');
 }
@@ -60,7 +63,8 @@ export default async function BlogPost({ params }) {
         .post-body hr { border: none; border-top: 0.5px solid rgba(84,22,29,0.15); margin: 3rem 0; }
         .post-body a { color: #54161D; border-bottom: 0.5px solid rgba(84,22,29,0.4); text-decoration: none; }
         .post-body a:hover { border-bottom-color: #54161D; }
-        .post-body img { width: 100%; height: auto; margin: 2rem 0; }
+        .post-body img { width: 100%; height: auto; margin: 2rem 0; display: block; }
+        .post-body br { line-height: 1.85; }
       `}</style>
 
       <div style={{ padding: 'clamp(60px, 8vw, 100px) calc(var(--border-width) + 48px)', maxWidth: '720px', margin: '0 auto' }}>
