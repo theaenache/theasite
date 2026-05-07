@@ -3,28 +3,33 @@ import { MinimalFooter } from '@/components/Footer';
 const affiliations = [
   {
     role: 'Research Assistant',
-    org: 'DiMo Lab',
-    place: 'PI: Naveen Vaidya · SDSU',
-  },
-  {
-    role: 'Research Assistant',
     org: 'SDSU Imperial Valley Prevention Research Center',
     place: 'PI: Eyal Oren, Miguel Angel Zavala Perez · SDSU-IV',
+    url: 'https://ivprc.sdsu.edu/',
   },
   {
     role: 'Visiting Scholar',
     org: 'Feinstein Institutes for Medical Research',
     place: 'PI: Theodoros Zanos · Feinstein Institutes for Medical Research, Northwell Health · Division of Health AI, Department of Bioelectric Medicine',
+    url: 'https://feinstein.northwell.edu/institutes-researchers/our-researchers/theodoros-zanos-phd',
   },
   {
     role: 'Researcher',
     org: 'Sekeh Lab',
     place: 'PI: Salimeh Yasaei Sekeh · SDSU',
+    url: 'https://salimehsekeh.wixsite.com/sekeh-lab',
   },
   {
     role: 'Research and Grant Project Analyst',
     org: 'Proactive FQHC',
     place: 'Sunnyvale, CA',
+    url: 'https://www.proactivefqhc.org/',
+  },
+  {
+    role: 'Research Assistant',
+    org: 'DiMo Lab',
+    place: 'PI: Naveen Vaidya · SDSU',
+    url: 'https://nvaidya.sdsu.edu/DiMoLab.html',
   },
 ];
 
@@ -48,6 +53,29 @@ export default function AboutPage() {
         .cv-button:hover {
           background: #54161D;
           color: #FFFBF0;
+        }
+        .affil-link {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 17px;
+          color: #54161D;
+          margin-bottom: 4px;
+          display: inline-block;
+          text-decoration: none;
+          border-bottom: 0.5px solid transparent;
+          transition: border-color 0.2s ease;
+        }
+        .affil-link:hover {
+          border-bottom-color: #54161D;
+        }
+        @media (max-width: 768px) {
+          .about-grid {
+            grid-template-columns: 1fr !important;
+            text-align: center;
+          }
+          .about-grid img {
+            margin: 0 auto;
+            max-width: 260px;
+          }
         }
       `}</style>
 
@@ -151,12 +179,23 @@ export default function AboutPage() {
                   {item.role}
                 </p>
                 <div>
-                  <p style={{
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: '17px', color: '#54161D', marginBottom: '4px',
-                  }}>
-                    {item.org}
-                  </p>
+                  {item.url ? (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="affil-link"
+                    >
+                      {item.org}
+                    </a>
+                  ) : (
+                    <p style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: '17px', color: '#54161D', marginBottom: '4px',
+                    }}>
+                      {item.org}
+                    </p>
+                  )}
                   <p style={{
                     fontFamily: "'Inter', sans-serif", fontWeight: '300',
                     fontSize: '12px', color: 'rgba(84,22,29,0.5)',
