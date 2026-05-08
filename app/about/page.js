@@ -3,14 +3,8 @@ import { MinimalFooter } from '@/components/Footer';
 const affiliations = [
   {
     role: 'Research Assistant',
-    org: 'DiMo Lab',
-    place: 'PI: Naveen Vaidya · SDSU',
-    url: 'https://nvaidya.sdsu.edu/DiMoLab.html',
-  },
-  {
-    role: 'Research Assistant',
     org: 'SDSU Imperial Valley Prevention Research Center',
-    place: 'PI: Eyal Oren, Miguel Angel Zavala Perez · SDSU-IV',
+    place: 'PI: Eyal Oren, Miguel Angel Zavala Perez · SDSU-IV · School of Public Health',
     url: 'https://ivprc.sdsu.edu/',
   },
   {
@@ -22,7 +16,7 @@ const affiliations = [
   {
     role: 'Researcher',
     org: 'Sekeh Lab',
-    place: 'PI: Salimeh Yasaei Sekeh · SDSU',
+    place: 'PI: Salimeh Yasaei Sekeh · SDSU · Computer Science Department',
     url: 'https://salimehsekeh.wixsite.com/sekeh-lab',
   },
   {
@@ -31,12 +25,26 @@ const affiliations = [
     place: 'Sunnyvale, CA',
     url: 'https://www.proactivefqhc.org/',
   },
+  {
+    role: 'Research Assistant',
+    org: 'DiMo Lab',
+    place: 'PI: Naveen Vaidya · SDSU · Department of Mathematics and Statistics',
+    url: 'https://nvaidya.sdsu.edu/DiMoLab.html',
+  },
 ];
 
 export default function AboutPage() {
   return (
     <>
       <style>{`
+        @font-face {
+          font-family: 'Aston';
+          src: url('/fonts/aston.ttf') format('truetype');
+        }
+        @font-face {
+          font-family: 'Vilaka';
+          src: url('/fonts/vilaka.ttf') format('truetype');
+        }
         .cv-button {
           display: inline-flex;
           align-items: center;
@@ -111,17 +119,17 @@ export default function AboutPage() {
           {/* Bio */}
           <div>
             <h1 style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'Aston', serif", /* swap to "'Vilaka', serif" to use Vilaka */
               fontSize: 'clamp(2rem, 4vw, 3rem)',
               fontWeight: '400', color: '#54161D',
               lineHeight: '1.1', marginBottom: '28px',
               textAlign: 'center',
             }}>
-              Thea Enache
+              Thea L. Enache
             </h1>
 
             <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>
-              I grew up between two places that couldn't agree on much of anything, particularly in regards to how to keep people alive.
+              I grew up between two places: Romania, my first language and where my familial lineage is rooted, and the Bay Area, where I spent the majority of my adolesence. Both of those places shaped how I see the world and what I care about. In Romania, I saw up close how inequity shapes health outcomes in a system that is underfunded, understaffed, and often corrupt. In the Bay Area, I saw up close how innovation can be a powerful force for good but also how it can exacerbate inequities when it's not built with everyone in mind.
             </p>
             <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>
               In Romania, care was something you and your family negotiated constantly. What happened to you in a medical setting depended almost entirely on who you slipped a gift to at the door, at the desk, at the cardiologist, wherever you ended up. Records were handwritten on paper, and symptoms were only addressed if you were lucky and had paid enough people by the time you needed it. I saw people I loved operated on with tools that should not have been used. Consequentially, I understood very early on that medicine was not neutral, that systems were not neutral, but rather that who you are and what you have determines what you receive, often long before you're sick.
