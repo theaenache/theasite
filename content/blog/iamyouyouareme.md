@@ -1,8 +1,8 @@
 ---
 title: "I Am You, You Are Me"
 date: "2026-05-04"
-excerpt: "A poem published in Issue 10 of The Look. Adapted from Nikita Gill, in English and Spanish."
-cover: ""
+excerpt: "A poem published in Issue 10 of The Look. Adapted from a poem by Nikita Gill, in English and in Spanish."
+cover: "/images/blog/risoscan.jpeg"
 tag: "Poetry"
 ---
 

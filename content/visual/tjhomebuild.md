@@ -7,37 +7,28 @@ cover: "/images/visual/tjhomebuild/tjhomebuild-b.png"
 sketch: "/images/visual/tjhomebuild/tjhomebuild-s.png"
 ---
 
-![Gael and I <3](/images/visual/tjhomebuild/meng5.JPEG)
+![Gael and I <3](/images/visual/tjhomebuild/mengcover.jpeg)
 
+![Gael and Julian flooring it](/images/visual/tjhomebuild/whip.jpeg)
 
-![Gael and Julian flooring it](/images/visual/tjhomebuild/whip.JPEG)
+![Me&G enjoying 53 slices of watermelon](/images/visual/tjhomebuild/meng2.jpeg)
 
+![All smiles :)](/images/visual/tjhomebuild/smileyboy.jpeg)
 
-![Me&G enjoying 53 slices of watermelon](/images/visual/tjhomebuild/meng2.JPEG)
+![Roof coming up!](/images/visual/tjhomebuild/house3p1.jpeg)
 
+![hey nacho :P](/images/visual/tjhomebuild/nacho.jpeg)
 
-![All smiles :)](/images/visual/tjhomebuild/smileyboy.JPEG)
+![what a beautiful day](/images/visual/tjhomebuild/sky.jpeg)
 
+![<3:,)](/images/visual/tjhomebuild/luvg.jpeg)
 
-![Roof coming up!](/images/visual/tjhomebuild/house3p1.JPEG)
+![eli and i signed eachothers jerseys](/images/visual/tjhomebuild/eli.jpeg)
 
+![just hanging out](/images/visual/tjhomebuild/meng4.jpg)
 
-![hey nacho :P](/images/visual/tjhomebuild/nacho.JPEG)
+![chattin with og](/images/visual/tjhomebuild/hehe.jpg)
 
+![chattin with og](/images/visual/tjhomebuild/teeheehee.JPG)
 
-![what a beautiful day](/images/visual/tjhomebuild/sky.JPEG)
-
-
-![<3:,)](/images/visual/tjhomebuild/luvg.JPEG)
-
-
-![eli and i signed eachothers jerseys](/images/visual/tjhomebuild/eli.JPEG)
-
-
-![just hanging out](/images/visual/tjhomebuild/meng4.JPG)
-
-
-![chattin with og](/images/visual/tjhomebuild/hehe.JPG)
-
-
-![concurrent cooking](/images/visual/tjhomebuild/workiph3.JPEG)
+![concurrent cooking](/images/visual/tjhomebuild/workiph3.jpeg)

@@ -28,14 +28,24 @@ function parseAlbumContent(content) {
       if (imgMatch) {
         const caption = imgMatch[1];
         const src = imgMatch[2];
-        // Collect commentary lines after the image
-        let commentary = '';
+        // Collect commentary — stop only at next image, not at blank lines
+        let commentaryParagraphs = [];
+        let currentPara = [];
         i++;
-        while (i < lines.length && !lines[i].trim().startsWith('![') && lines[i].trim() !== '') {
-          commentary += lines[i] + ' ';
+        while (i < lines.length && !lines[i].trim().startsWith('![')) {
+          const l = lines[i].trim();
+          if (l === '') {
+            if (currentPara.length > 0) {
+              commentaryParagraphs.push(currentPara.join(' '));
+              currentPara = [];
+            }
+          } else {
+            currentPara.push(l);
+          }
           i++;
         }
-        blocks.push({ src, caption, commentary: commentary.trim() });
+        if (currentPara.length > 0) commentaryParagraphs.push(currentPara.join(' '));
+        blocks.push({ src, caption, paragraphs: commentaryParagraphs });
       }
     } else {
       i++;
@@ -103,17 +113,19 @@ export default async function AlbumPage({ params }) {
                     )}
                   </div>
                   <div>
-                    <p style={{ fontFamily: "'Inter', sans-serif", fontWeight: '300', fontSize: '15px', lineHeight: '1.85', color: 'rgba(84,22,29,0.8)' }}>
-                      {block.commentary}
-                    </p>
+                    {(block.paragraphs || []).map((para, pi) => (
+                      <p key={pi} style={{ fontFamily: "'Inter', sans-serif", fontWeight: '300', fontSize: '15px', lineHeight: '1.85', color: 'rgba(84,22,29,0.8)', marginBottom: '1rem' }}>{para}</p>
+                    ))}
                   </div>
                 </>
               ) : (
                 <>
                   <div>
-                    <p style={{ fontFamily: "'Inter', sans-serif", fontWeight: '300', fontSize: '15px', lineHeight: '1.85', color: 'rgba(84,22,29,0.8)' }}>
-                      {block.commentary}
-                    </p>
+                    <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: '300', fontSize: '15px', lineHeight: '1.85', color: 'rgba(84,22,29,0.8)' }}>
+                      {(block.paragraphs || [block.commentary]).map((para, pi) => (
+                        <p key={pi} style={{ marginBottom: '1rem' }}>{para}</p>
+                      ))}
+                    </div>
                   </div>
                   <div style={{ overflow: 'hidden' }}>
                     <img src={block.src} alt={block.caption} style={{ width: '100%', height: 'auto', display: 'block' }}/>
