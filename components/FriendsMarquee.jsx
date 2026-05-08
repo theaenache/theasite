@@ -8,6 +8,7 @@ const friends = [
   { name: 'Jason',   href: 'https://jasonheflinger.com/',                     icon: '/friends/jason.gif' },
   { name: 'Jia',     href: 'https://jia-s-personal-portfolio.vercel.app/',    icon: '/friends/jia.png' },
   { name: 'Justin',  href: 'https://neonetizen.net/',                         icon: '/friends/justin.png' },
+  { name: 'Noelle',  href: 'https://www.noelledaunch.com/',                         icon: '/friends/noelle.png' },
 ];
 
 const doubled = [...friends, ...friends];
