@@ -56,4 +56,4 @@ Add the other half of the cardamom to the espresso beans. Grind together on a fi
  Grind 18-19g of beans. Fill the porto filter with the 18g of ground beans, and ensure you are breaking up any chunks with a small whisk. Level after, and pack it down, placing into the espresso machine and turning until you get resistance. Press double shot to pull your espresso. Ensure you only pull between 35-40g of espresso. Shouts out to Noelle for this method, love you. Do this twice, one for each serving. Alternatively, you can use a moka pot. Just pack the beans section of your pot with the grounds, and please don't crank it on high. Keep it at a respectful 7/10 heat. 
 
 ### Assemble
-Scoop the golden milk gelato into your preferred vessel. I like a cute little cup. I carve out an opening for the espresso in the mittle of my gelato, and put the warm gelato right on top. Enjoy :D 
+Scoop the golden milk gelato into your preferred vessel. I like a cute little cup. I carve out an opening for the espresso in the middle of my gelato, and put the warm espresso right on top. Enjoy :D 
