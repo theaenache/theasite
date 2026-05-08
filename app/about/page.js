@@ -127,7 +127,9 @@ export default function AboutPage() {
             }}>
               Thea L. Enache
             </h1>
-
+            <div style={{ display: 'flex', justifyContent: 'center', margin: '12px 0 28px' }}>
+  <img src="/titlesep.png" alt="" style={{ height: '22px', width: 'auto', opacity: 0.9 }} />
+</div>
             <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>
               I grew up between two places: Romania, my first language and where my familial lineage is rooted, and the Bay Area, where I spent the majority of my adolesence. Both of those places shaped how I see the world and what I care about. In Romania, I saw up close how inequity shapes health outcomes in a system that is underfunded, understaffed, and often corrupt. In the Bay Area, I saw up close how innovation can be a powerful force for good but also how it can exacerbate inequities when it's not built with everyone in mind.
             </p>
