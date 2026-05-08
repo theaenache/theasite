@@ -3,8 +3,14 @@ import { MinimalFooter } from '@/components/Footer';
 const affiliations = [
   {
     role: 'Research Assistant',
+    org: 'DiMo Lab',
+    place: 'PI: Naveen Vaidya · SDSU',
+    url: 'https://nvaidya.sdsu.edu/DiMoLab.html',
+  },
+  {
+    role: 'Research Assistant',
     org: 'SDSU Imperial Valley Prevention Research Center',
-    place: 'PI: Eyal Oren, Miguel Angel Zavala Perez · SDSU-IV · School of Public Health',
+    place: 'PI: Eyal Oren, Miguel Angel Zavala Perez · SDSU-IV',
     url: 'https://ivprc.sdsu.edu/',
   },
   {
@@ -16,7 +22,7 @@ const affiliations = [
   {
     role: 'Researcher',
     org: 'Sekeh Lab',
-    place: 'PI: Salimeh Yasaei Sekeh · SDSU · Computer Science Department',
+    place: 'PI: Salimeh Yasaei Sekeh · SDSU',
     url: 'https://salimehsekeh.wixsite.com/sekeh-lab',
   },
   {
@@ -24,12 +30,6 @@ const affiliations = [
     org: 'Proactive FQHC',
     place: 'Sunnyvale, CA',
     url: 'https://www.proactivefqhc.org/',
-  },
-  {
-    role: 'Research Assistant',
-    org: 'DiMo Lab',
-    place: 'PI: Naveen Vaidya · SDSU · Applied Mathematics Department',
-    url: 'https://nvaidya.sdsu.edu/DiMoLab.html',
   },
 ];
 
@@ -117,29 +117,26 @@ export default function AboutPage() {
               lineHeight: '1.1', marginBottom: '28px',
               textAlign: 'center',
             }}>
-              Thea L. Enache
+              Thea Enache
             </h1>
 
             <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>
-              I grew up between two places that couldn't agree on much of anything, particularly in regards to how best to keep people alive.
+              I grew up between two places that couldn't agree on much of anything, particularly in regards to how to keep people alive.
             </p>
             <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>
-              In Romania, I watched my grandparents navigate a system where care was something that was constantly negotiated by you and your family. Where the quality of what happened to you in a medical setting depended almost entirely on who you slipped a gift to at the door, at the desk, at the cardiologist, the care facility, wherever you found yourself. Where medical records were handwritten on paper and stored in folders that could be misplaced forever with one slipup. Where symptoms were addressed as they appeared, if you were lucky, and if you had paid enough people by then. I saw people I loved operated on with tools that should not have been used. Seeing how that influenced the life of my loved ones, I understood early on in my life that medicine was not neutral. That systems were not neutral. That who you were and what you had determined what you received, often long before you were sick.
+              In Romania, care was something you and your family negotiated constantly. What happened to you in a medical setting depended almost entirely on who you slipped a gift to at the door, at the desk, at the cardiologist, wherever you ended up. Records were handwritten on paper, and symptoms were only addressed if you were lucky and had paid enough people by the time you needed it. I saw people I loved operated on with tools that should not have been used. Consequentially, I understood very early on that medicine was not neutral, that systems were not neutral, but rather that who you are and what you have determines what you receive, often long before you're sick.
             </p>
             <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>
-              In California, the calculus was different but the conclusion was the same. The Bay Area taught me to believe in what technology could do. I grew up taking things apart with my father, watching the world accelerate, absorbing the genuine conviction that innovation could solve things. In fourth grade I was scared to take my hands off the handlebars to signal a turn, so I built lights that would do it for me using the top halfs of plastic water bottles, a plastic box, LEDs, and spare parts from my father's computer construction days. I loved tinkering with technology, and I loved developing fun usable tools. Through prolonged exposure to the Bay Area, it also showed me, slowly and then all at once, who the big innovations were actually built to benefit. A different flavor of institutional greed, a different set of people left outside it.
+              In California, the Bay Area taught me to believe in what technology could do. I grew up taking things apart with my father, convinced that innovation could solve things. In fourth grade I was scared to take my hands off the handlebars to signal a turn, so I built lights that would do it for me: water bottle tops, a plastic box, LEDs, spare parts. I loved building things that solved something. But slowly and then all at once, the Bay Area also showed me who the big innovations were actually built for. A different flavor of a similar problem.
             </p>
             <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>
-              I exist somewhere between those two places. Not quite from either -- both on the academic, and on the cultural side. That position used to feel like a problem, and I am proud to report that I have since found my strength in it.
+              I'm somewhere between those two places, academically and culturally. That used to feel like a disadvantage, but I've since found my footing in it.
             </p>
             <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>
-              I'm Thea Enache, an undergraduate at San Diego State University completing dual degrees in Public Health and Mathematical Data Science + Computer Science, with a minor in Statistics. My work sits at the intersection of public health, AI, and computational modeling. Sometimes that looks like epidemiological modeling, sometimes it looks like building equity centered clinical AI tools, and sometimes it looks like asking whether the technology we already have is actually reaching the people it should. The systems I watched fail my grandparents exist in some form everywhere. The data that could help fix them rarely crosses borders cleanly, and the tools built to analyze it are rarely designed with the most burdened populations in mind. I want to work on that problem across global health epidemiology, health-focused AI, and the policy frameworks that determine whether any of it ever reaches the people who need it most.
-            </p>
-            <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>
-              I believe public institutions are where this work belongs. In this setting, serving everyone should be the design constraint. The math has to work for the person who can't bribe anyone. It has to work for the people my grandparents were.
+              I'm Thea Enache, completing dual degrees in Public Health and Mathematical Data Science + Computer Science at San Diego State University. My work is at the intersection of public health, AI, and computational modeling. Sometimes that's epidemiological modeling, sometimes it's building clinical AI tools, sometimes it's just asking whether what we've already built is actually reaching the people it should. I want to work on that problem across global health epi, health-focused AI, and the policy questions that determine whether any of it matters on the ground.
             </p>
             <p style={{ color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>
-              That's what I'm building toward. Please feel free to pick around this page to follow along on my journey :)
+              Please feel free to pick around this page to follow along on my journey :)
             </p>
 
             <div style={{ marginTop: '36px' }}>
