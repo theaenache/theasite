@@ -169,7 +169,7 @@ function PhotoStrip({ current, fading }) {
         width: `${slides.length * 100}%`,
         height: '100%',
         transform: `translateX(${-current * (100 / slides.length)}%)`,
-        transition: fading ? 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
+        transition: fading ? 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
         willChange: 'transform',
       }}>
         {slides.map((slide, si) => (
@@ -192,7 +192,7 @@ export default function Slideshow() {
     setTimeout(() => {
       setCurrent(index);
       setFading(false);
-    }, 600);
+    }, 300);
   };
 
   const handleTouchStart = (e) => {
