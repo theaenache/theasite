@@ -4,6 +4,7 @@ date: "2026-05-04"
 tag: "Magazine Piece"
 cover: "/images/visual/issue10covers/7.png"
 sketch: "/images/visual/issue10covers/6.png"
+heroImage: true
 ---
 
 ![Centerfold of the mag!](/images/visual/issue10spread/risoscan.jpeg)
