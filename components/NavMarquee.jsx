@@ -29,7 +29,7 @@ function buildItems() {
 }
 
 const items = buildItems();
-const doubled = [...items, ...items]; /* duplicate for seamless loop */
+const doubled = [...items, ...items, ...items, ...items, ...items, ...items, ...items, ...items]; /* x8 for no gap */
 
 export default function NavMarquee() {
   return (
