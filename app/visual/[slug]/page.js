@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { MinimalFooter } from '@/components/Footer';
 import Link from 'next/link';
+import ScrollZoom from '@/components/ScrollZoom';
 
 function getAlbum(slug) {
   const filepath = path.join(process.cwd(), 'content/visual', `${slug}.md`);
@@ -48,6 +49,23 @@ function parseAlbumContent(content) {
   return blocks;
 }
 
+const textStyle = {
+  fontFamily: "'Inter', sans-serif",
+  fontWeight: '300',
+  fontSize: '15px',
+  lineHeight: '1.85',
+  color: 'rgba(84,22,29,0.8)',
+  marginBottom: '1rem',
+};
+
+const captionStyle = {
+  fontFamily: "'Cinzel', serif",
+  fontSize: '9px',
+  letterSpacing: '1.5px',
+  color: 'rgba(84,22,29,0.35)',
+  marginTop: '10px',
+};
+
 export default async function AlbumPage({ params }) {
   const { slug } = await params;
   const album = getAlbum(slug);
@@ -64,33 +82,6 @@ export default async function AlbumPage({ params }) {
 
   return (
     <>
-      <style>{`
-        .scroll-photo {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          transform: scale(0.95);
-        }
-        .scroll-photo.in-view {
-          transform: scale(1);
-        }
-      `}</style>
-      <script dangerouslySetInnerHTML={{ __html: `
-        if (typeof window !== 'undefined') {
-          window.addEventListener('DOMContentLoaded', function() {
-            var photos = document.querySelectorAll('.scroll-photo');
-            var observer = new IntersectionObserver(function(entries) {
-              entries.forEach(function(entry) {
-                if (entry.intersectionRatio > 0.5) {
-                  entry.target.classList.add('in-view');
-                } else {
-                  entry.target.classList.remove('in-view');
-                }
-              });
-            }, { threshold: [0, 0.5, 1] });
-            photos.forEach(function(p) { observer.observe(p); });
-          });
-        }
-      `}} />
-
       <div style={{ padding: 'clamp(60px, 8vw, 100px) calc(var(--border-width) + 48px)', maxWidth: '1000px', margin: '0 auto' }}>
 
         <Link href="/visual" style={{ fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '2px', color: 'rgba(84,22,29,0.5)', textDecoration: 'none', display: 'inline-block', marginBottom: '48px' }}>
@@ -118,29 +109,26 @@ export default async function AlbumPage({ params }) {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
           {blocks.map((block, i) => {
 
-            /* Hero layout — first block only, only when heroImage: true */
+            /* Hero block — full width image, text below */
             if (heroFirst && i === 0) {
               return (
                 <div key={i}>
-                  <div className="scroll-photo" style={{ width: '100%', marginBottom: '32px' }}>
+                  <ScrollZoom subtle={true} style={{ width: '100%', marginBottom: '32px' }}>
                     <img src={block.src} alt={block.caption} style={{ width: '100%', height: 'auto', display: 'block' }}/>
-                    {block.caption && (
-                      <p style={{ fontFamily: "'Cinzel', serif", fontSize: '9px', letterSpacing: '1.5px', color: 'rgba(84,22,29,0.35)', marginTop: '10px' }}>
-                        {block.caption}
-                      </p>
-                    )}
-                  </div>
+                    {block.caption && <p style={captionStyle}>{block.caption}</p>}
+                  </ScrollZoom>
                   <div style={{ maxWidth: '680px' }}>
                     {(block.paragraphs || []).map((para, pi) => (
-                      <p key={pi} style={{ fontFamily: "'Inter', sans-serif", fontWeight: '300', fontSize: '15px', lineHeight: '1.85', color: 'rgba(84,22,29,0.8)', marginBottom: '1rem' }}>{para}</p>
+                      <p key={pi} style={textStyle}>{para}</p>
                     ))}
                   </div>
                 </div>
               );
             }
 
-            /* Alternating layout for all other blocks */
+            /* Alternating layout */
             const isEven = heroFirst ? (i % 2 === 1) : (i % 2 === 0);
+
             return (
               <div key={i} style={{
                 display: 'grid',
@@ -150,17 +138,13 @@ export default async function AlbumPage({ params }) {
               }}>
                 {isEven ? (
                   <>
-                    <div className="scroll-photo" style={{ overflow: 'hidden' }}>
+                    <ScrollZoom style={{ overflow: 'hidden' }}>
                       <img src={block.src} alt={block.caption} style={{ width: '100%', height: 'auto', display: 'block' }}/>
-                      {block.caption && (
-                        <p style={{ fontFamily: "'Cinzel', serif", fontSize: '9px', letterSpacing: '1.5px', color: 'rgba(84,22,29,0.35)', marginTop: '10px' }}>
-                          {block.caption}
-                        </p>
-                      )}
-                    </div>
+                      {block.caption && <p style={captionStyle}>{block.caption}</p>}
+                    </ScrollZoom>
                     <div>
                       {(block.paragraphs || []).map((para, pi) => (
-                        <p key={pi} style={{ fontFamily: "'Inter', sans-serif", fontWeight: '300', fontSize: '15px', lineHeight: '1.85', color: 'rgba(84,22,29,0.8)', marginBottom: '1rem' }}>{para}</p>
+                        <p key={pi} style={textStyle}>{para}</p>
                       ))}
                     </div>
                   </>
@@ -168,17 +152,13 @@ export default async function AlbumPage({ params }) {
                   <>
                     <div>
                       {(block.paragraphs || []).map((para, pi) => (
-                        <p key={pi} style={{ fontFamily: "'Inter', sans-serif", fontWeight: '300', fontSize: '15px', lineHeight: '1.85', color: 'rgba(84,22,29,0.8)', marginBottom: '1rem' }}>{para}</p>
+                        <p key={pi} style={textStyle}>{para}</p>
                       ))}
                     </div>
-                    <div className="scroll-photo" style={{ overflow: 'hidden' }}>
+                    <ScrollZoom style={{ overflow: 'hidden' }}>
                       <img src={block.src} alt={block.caption} style={{ width: '100%', height: 'auto', display: 'block' }}/>
-                      {block.caption && (
-                        <p style={{ fontFamily: "'Cinzel', serif", fontSize: '9px', letterSpacing: '1.5px', color: 'rgba(84,22,29,0.35)', marginTop: '10px' }}>
-                          {block.caption}
-                        </p>
-                      )}
-                    </div>
+                      {block.caption && <p style={captionStyle}>{block.caption}</p>}
+                    </ScrollZoom>
                   </>
                 )}
               </div>
