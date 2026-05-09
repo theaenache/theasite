@@ -5,10 +5,10 @@ import { usePathname } from 'next/navigation';
 
 const menuItems = [
   { label: 'About', href: '/about' },
-  { label: 'Blog', href: '/blog' },
   { label: 'Projects', href: '/projects' },
-  { label: 'Recipes', href: '/recipes' },
   { label: 'Visual', href: '/visual' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Recipes', href: '/recipes' },
 ];
 
 /* small SVG embroidery motif shown beside each hovered item */

@@ -2,11 +2,11 @@
 import { useState, useEffect, useRef } from 'react';
 
 const slides = [
-  { label: 'Blog',     href: '/blog' },
-  { label: 'Recipes',  href: '/recipes' },
+  { label: 'About',    href: '/about' },
   { label: 'Projects', href: '/projects' },
   { label: 'Visual',   href: '/visual' },
-  { label: 'About',    href: '/about' },
+  { label: 'Blog',     href: '/blog' },
+  { label: 'Recipes',  href: '/recipes' },
 ];
 
 const baseLayouts = [
@@ -22,14 +22,14 @@ const aboutLayouts = [
 ];
 
 const slidePhotos = [
-  [{ src: null }, { src: null }, { src: null }, { src: null }], // Blog
-  [{ src: null }, { src: null }, { src: null }, { src: null }], // Recipes
-  [{ src: null }, { src: null }, { src: null }, { src: null }], // Projects
-  [{ src: null }, { src: null }, { src: null }, { src: null }], // Visual
   [                                                              // About
     { src: '/images/slideshow/about/aboutss-1.png' },
     { src: '/images/slideshow/about/aboutss-2.png' },
   ],
+  [{ src: null }, { src: null }, { src: null }, { src: null }], // Projects
+  [{ src: null }, { src: null }, { src: null }, { src: null }], // Visual
+  [{ src: null }, { src: null }, { src: null }, { src: null }], // Blog
+  [{ src: null }, { src: null }, { src: null }, { src: null }], // Recipes
 ];
 
 function PhotoCard({ photo, layout, slideLabel, slideHref, isAbout }) {
