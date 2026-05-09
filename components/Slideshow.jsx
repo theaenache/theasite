@@ -18,9 +18,11 @@ const baseLayouts = [
 ];
 
 const aboutLayouts = [
-  { xPct: 20, yPct: 5, wPct: 22, hPct: 66, rot: -2 },
-  { xPct: 57, yPct: 8, wPct: 22, hPct: 66, rot:  2 },
+  { xPct: 18, yPct: 12, wPct: 'clamp(140px, 22%, 260px)', hPct: 66, rot: -2 },
+  { xPct: 55, yPct: 15, wPct: 'clamp(140px, 22%, 260px)', hPct: 66, rot:  2 },
 ];
+
+
 
 const slidePhotos = [
   [ // Blog
@@ -70,12 +72,22 @@ const wiggleStyle = `
     0%   { transform: rotate(2deg) scale(1); }
     100% { transform: rotate(5deg) scale(1.02); }
   }
+  @keyframes wiggle-left-centered {
+    0%   { transform: translate(0, -50%) rotate(-2deg) scale(1); }
+    100% { transform: translate(0, -50%) rotate(-5deg) scale(1.02); }
+  }
+  @keyframes wiggle-right-centered {
+    0%   { transform: translate(0, -50%) rotate(2deg) scale(1); }
+    100% { transform: translate(0, -50%) rotate(5deg) scale(1.02); }
+  }
   .photo-card { transition: box-shadow 0.2s ease; }
   .photo-card:hover { box-shadow: 0 8px 32px rgba(84,22,29,0.2) !important; }
   .photo-card.rot-n3:hover { animation: wiggle-left 0.2s ease forwards; }
   .photo-card.rot-p2:hover { animation: wiggle-right 0.2s ease forwards; }
   .photo-card.rot-n2:hover { animation: wiggle-neg2 0.2s ease forwards; }
   .photo-card.rot-p3:hover { animation: wiggle-pos2 0.2s ease forwards; }
+  .photo-card.rot-centered-neg:hover { animation: wiggle-left-centered 0.2s ease forwards; }
+  .photo-card.rot-centered-pos:hover { animation: wiggle-right-centered 0.2s ease forwards; }
 `;
 
 function PhotoPanel({ slide, si, slideLabel }) {
@@ -88,18 +100,25 @@ function PhotoPanel({ slide, si, slideLabel }) {
       {photos.map((photo, pi) => {
         const layout = layouts[pi % layouts.length];
         const rotMap = { '-3': 'rot-n3', '2': 'rot-p2', '-2': 'rot-n2', '3': 'rot-p3' };
-        const rotClass = rotMap[String(layout.rot)] || (layout.rot < 0 ? 'rot-n2' : 'rot-p2');
+        const baseRotClass = rotMap[String(layout.rot)] || (layout.rot < 0 ? 'rot-n2' : 'rot-p2');
+        const rotClass = isAbout ? (layout.rot < 0 ? 'rot-centered-neg' : 'rot-centered-pos') : baseRotClass;
         return (
-          <div key={pi} className={`photo-card ${rotClass}`} style={{
+          <a key={pi} href={slide.href} className={`photo-card ${rotClass}`} style={{
             position: 'absolute',
             left: `${layout.xPct}%`,
-            top: `${layout.yPct}%`,
-            width: `${layout.wPct}%`,
-            paddingBottom: `${layout.hPct}%`,
-            transform: `rotate(${layout.rot}deg)`,
+            top: isAbout ? '50%' : `calc(72px + ${layout.yPct}%)`,
+            transform: isAbout
+              ? `translate(0, -50%) rotate(${layout.rot}deg)`
+              : `rotate(${layout.rot}deg)`,
+            width: typeof layout.wPct === 'string' ? layout.wPct : `${layout.wPct}%`,
+            height: isAbout ? 'calc(100vh - 120px)' : undefined,
+            paddingBottom: isAbout ? undefined : `${layout.hPct}%`,
             '--rot': `${layout.rot}deg`,
             boxShadow: '0 4px 20px rgba(84,22,29,0.1)',
             overflow: 'hidden',
+            display: 'block',
+            textDecoration: 'none',
+            zIndex: 4,
           }}>
             <div style={{ position: 'absolute', inset: 0 }}>
               {photo.src ? (
@@ -131,7 +150,7 @@ function PhotoPanel({ slide, si, slideLabel }) {
                 </div>
               )}
             </div>
-          </div>
+          </a>
         );
       })}
     </div>
@@ -205,17 +224,19 @@ export default function Slideshow() {
         position: 'relative', width: '100%', height: '100vh',
         overflow: 'hidden', background: '#FFFBF0',
       }}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
+
     >
       <style>{wiggleStyle}</style>
+      {/* Swipe capture layer — touch only, doesn't block mouse hover */}
+      <div
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        style={{ position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none' }}
+      />
       <PhotoStrip current={current} fading={fading} />
 
-      <Link href={slides[current].href} style={{
-        position: 'absolute', inset: 0, zIndex: 2, display: 'block',
-        pointerEvents: 'none',
-      }}/>
+
 
       <div style={{
         position: 'absolute', bottom: '80px',
