@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
 
 const slides = [
   { label: 'Blog',     href: '/blog' },
@@ -18,141 +17,136 @@ const baseLayouts = [
 ];
 
 const aboutLayouts = [
-  { xPct: 18, yPct: 12, wPct: 'clamp(140px, 22%, 260px)', hPct: 66, rot: -2 },
-  { xPct: 55, yPct: 15, wPct: 'clamp(140px, 22%, 260px)', hPct: 66, rot:  2 },
+  { xPct: 18, yPct: 0, wPct: 22, rot: -2 },
+  { xPct: 55, yPct: 0, wPct: 22, rot:  2 },
 ];
 
-
-
 const slidePhotos = [
-  [ // Blog
-    { src: null },
-    { src: null },
-    { src: null },
-    { src: null },
-  ],
-  [ // Recipes
-    { src: null },
-    { src: null },
-    { src: null },
-    { src: null },
-  ],
-  [ // Projects
-    { src: null },
-    { src: null },
-    { src: null },
-    { src: null },
-  ],
-  [ // Visual
-    { src: null },
-    { src: null },
-    { src: null },
-    { src: null },
-  ],
-  [ // About — two tall photo strips
+  [{ src: null }, { src: null }, { src: null }, { src: null }], // Blog
+  [{ src: null }, { src: null }, { src: null }, { src: null }], // Recipes
+  [{ src: null }, { src: null }, { src: null }, { src: null }], // Projects
+  [{ src: null }, { src: null }, { src: null }, { src: null }], // Visual
+  [                                                              // About
     { src: '/images/slideshow/about/aboutss-1.png' },
     { src: '/images/slideshow/about/aboutss-2.png' },
   ],
 ];
 
-const wiggleStyle = `
-  @keyframes wiggle-left {
-    0%   { transform: rotate(-3deg) scale(1); }
-    100% { transform: rotate(-6deg) scale(1.02); }
-  }
-  @keyframes wiggle-right {
-    0%   { transform: rotate(3deg) scale(1); }
-    100% { transform: rotate(6deg) scale(1.02); }
-  }
-  @keyframes wiggle-neg2 {
-    0%   { transform: rotate(-2deg) scale(1); }
-    100% { transform: rotate(-5deg) scale(1.02); }
-  }
-  @keyframes wiggle-pos2 {
-    0%   { transform: rotate(2deg) scale(1); }
-    100% { transform: rotate(5deg) scale(1.02); }
-  }
-  @keyframes wiggle-left-centered {
-    0%   { transform: translate(0, -50%) rotate(-2deg) scale(1); }
-    100% { transform: translate(0, -50%) rotate(-5deg) scale(1.02); }
-  }
-  @keyframes wiggle-right-centered {
-    0%   { transform: translate(0, -50%) rotate(2deg) scale(1); }
-    100% { transform: translate(0, -50%) rotate(5deg) scale(1.02); }
-  }
-  .photo-card { transition: box-shadow 0.2s ease; }
-  .photo-card:hover { box-shadow: 0 8px 32px rgba(84,22,29,0.2) !important; }
-  .photo-card.rot-n3:hover { animation: wiggle-left 0.2s ease forwards; }
-  .photo-card.rot-p2:hover { animation: wiggle-right 0.2s ease forwards; }
-  .photo-card.rot-n2:hover { animation: wiggle-neg2 0.2s ease forwards; }
-  .photo-card.rot-p3:hover { animation: wiggle-pos2 0.2s ease forwards; }
-  .photo-card.rot-centered-neg:hover { animation: wiggle-left-centered 0.2s ease forwards; }
-  .photo-card.rot-centered-pos:hover { animation: wiggle-right-centered 0.2s ease forwards; }
-`;
+function PhotoCard({ photo, layout, slideLabel, slideHref, isAbout }) {
+  const [hovered, setHovered] = useState(false);
 
-function PhotoPanel({ slide, si, slideLabel }) {
-  const isAbout = slideLabel === 'About';
+  const wiggle = hovered ? (layout.rot < 0 ? -3 : 3) : 0;
+  const scale = hovered ? 1.02 : 1;
+  const transform = isAbout
+    ? `translate(0, -50%) rotate(${layout.rot + wiggle}deg) scale(${scale})`
+    : `rotate(${layout.rot + wiggle}deg) scale(${scale})`;
+
+  if (!photo.src) return (
+    <div style={{
+      position: 'absolute',
+      left: `${layout.xPct}%`,
+      top: `calc(72px + ${layout.yPct}%)`,
+      width: `${layout.wPct}%`,
+      paddingBottom: `${layout.hPct}%`,
+      transform: `rotate(${layout.rot}deg)`,
+      boxShadow: '0 4px 20px rgba(84,22,29,0.1)',
+      background: 'transparent',
+      zIndex: 4,
+    }}/>
+  );
+
+  if (isAbout) {
+    return (
+      <a
+        href={slideHref}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        style={{
+          position: 'absolute',
+          left: `${layout.xPct}%`,
+          top: '50%',
+          transform,
+          transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+          boxShadow: hovered ? '0 8px 32px rgba(84,22,29,0.2)' : '0 4px 20px rgba(84,22,29,0.1)',
+          display: 'block',
+          textDecoration: 'none',
+          zIndex: hovered ? 8 : 4,
+          cursor: 'pointer',
+        }}
+      >
+        <img
+          src={photo.src}
+          alt={slideLabel}
+          style={{
+            display: 'block',
+            width: 'clamp(140px, 22vw, 260px)',
+            height: 'auto',
+            filter: 'grayscale(100%) sepia(25%) contrast(1.08) brightness(1.08)',
+          }}
+        />
+      </a>
+    );
+  }
+
+  return (
+    <a
+      href={slideHref}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        position: 'absolute',
+        left: `${layout.xPct}%`,
+        top: `calc(72px + ${layout.yPct}%)`,
+        width: `${layout.wPct}%`,
+        paddingBottom: `${layout.hPct}%`,
+        transform,
+        boxShadow: hovered ? '0 8px 32px rgba(84,22,29,0.2)' : '0 4px 20px rgba(84,22,29,0.1)',
+        overflow: 'hidden',
+        display: 'block',
+        textDecoration: 'none',
+        zIndex: hovered ? 8 : 4,
+        cursor: 'pointer',
+        transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+      }}
+    >
+      <div style={{ position: 'absolute', inset: 0 }}>
+        <img
+          src={photo.src}
+          alt={slideLabel}
+          style={{
+            width: '100%', height: '100%',
+            objectFit: 'cover',
+            filter: 'grayscale(100%) sepia(25%) contrast(1.08) brightness(1.08)',
+            display: 'block',
+          }}
+        />
+      </div>
+    </a>
+  );
+}
+
+function PhotoPanel({ slide, si }) {
+  const isAbout = slide.label === 'About';
   const photos = slidePhotos[si];
   const layouts = isAbout ? aboutLayouts : baseLayouts;
 
   return (
-    <div style={{ position: 'absolute', top: 0, left: `${si * (100 / slides.length)}%`, width: `${100 / slides.length}%`, height: '100%' }}>
-      {photos.map((photo, pi) => {
-        const layout = layouts[pi % layouts.length];
-        const rotMap = { '-3': 'rot-n3', '2': 'rot-p2', '-2': 'rot-n2', '3': 'rot-p3' };
-        const baseRotClass = rotMap[String(layout.rot)] || (layout.rot < 0 ? 'rot-n2' : 'rot-p2');
-        const rotClass = isAbout ? (layout.rot < 0 ? 'rot-centered-neg' : 'rot-centered-pos') : baseRotClass;
-        return (
-          <a key={pi} href={slide.href} className={`photo-card ${rotClass}`} style={{
-            position: 'absolute',
-            left: `${layout.xPct}%`,
-            top: isAbout ? '50%' : `calc(72px + ${layout.yPct}%)`,
-            transform: isAbout
-              ? `translate(0, -50%) rotate(${layout.rot}deg)`
-              : `rotate(${layout.rot}deg)`,
-            width: typeof layout.wPct === 'string' ? layout.wPct : `${layout.wPct}%`,
-            height: isAbout ? 'calc(100vh - 120px)' : undefined,
-            paddingBottom: isAbout ? undefined : `${layout.hPct}%`,
-            '--rot': `${layout.rot}deg`,
-            boxShadow: '0 4px 20px rgba(84,22,29,0.1)',
-            overflow: 'hidden',
-            display: 'block',
-            textDecoration: 'none',
-            zIndex: 4,
-          }}>
-            <div style={{ position: 'absolute', inset: 0 }}>
-              {photo.src ? (
-                <img
-                  src={photo.src}
-                  alt={slideLabel}
-                  style={{
-                    width: '100%', height: '100%',
-                    objectFit: 'cover',
-                    filter: 'grayscale(100%) sepia(25%) contrast(1.08) brightness(1.08)',
-                    display: 'block',
-                  }}
-                />
-              ) : (
-                <div style={{
-                  width: '100%', height: '100%',
-                  background: 'rgba(84,22,29,0.07)',
-                  border: '0.5px solid rgba(84,22,29,0.12)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                }}>
-                  <p style={{
-                    fontFamily: "'Cinzel', serif",
-                    fontSize: '9px', letterSpacing: '1.5px',
-                    color: 'rgba(84,22,29,0.25)',
-                    textAlign: 'center', padding: '8px',
-                  }}>
-                    {slideLabel.toUpperCase()}
-                  </p>
-                </div>
-              )}
-            </div>
-          </a>
-        );
-      })}
+    <div style={{
+      position: 'absolute', top: 0,
+      left: `${si * (100 / slides.length)}%`,
+      width: `${100 / slides.length}%`,
+      height: '100%',
+    }}>
+      {photos.map((photo, pi) => (
+        <PhotoCard
+          key={pi}
+          photo={photo}
+          layout={layouts[pi % layouts.length]}
+          slideLabel={slide.label}
+          slideHref={slide.href}
+          isAbout={isAbout}
+        />
+      ))}
     </div>
   );
 }
@@ -169,7 +163,7 @@ function PhotoStrip({ current, fading }) {
         willChange: 'transform',
       }}>
         {slides.map((slide, si) => (
-          <PhotoPanel key={si} slide={slide} si={si} slideLabel={slide.label} />
+          <PhotoPanel key={si} slide={slide} si={si} />
         ))}
       </div>
     </div>
@@ -224,20 +218,13 @@ export default function Slideshow() {
         position: 'relative', width: '100%', height: '100vh',
         overflow: 'hidden', background: '#FFFBF0',
       }}
-
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
-      <style>{wiggleStyle}</style>
-      {/* Swipe capture layer — touch only, doesn't block mouse hover */}
-      <div
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        style={{ position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none' }}
-      />
       <PhotoStrip current={current} fading={fading} />
 
-
-
+      {/* Category label */}
       <div style={{
         position: 'absolute', bottom: '80px',
         left: 'calc(var(--border-width) + 32px)',
@@ -276,9 +263,7 @@ export default function Slideshow() {
         }}
         onMouseEnter={e => e.currentTarget.style.opacity = 0.7}
         onMouseLeave={e => e.currentTarget.style.opacity = 0.25}
-      >
-        ‹
-      </button>
+      >‹</button>
 
       {/* Right arrow */}
       <button
@@ -295,10 +280,9 @@ export default function Slideshow() {
         }}
         onMouseEnter={e => e.currentTarget.style.opacity = 0.7}
         onMouseLeave={e => e.currentTarget.style.opacity = 0.25}
-      >
-        ›
-      </button>
+      >›</button>
 
+      {/* Dot indicators */}
       <div style={{
         position: 'absolute', bottom: '32px',
         left: '50%', transform: 'translateX(-50%)',
