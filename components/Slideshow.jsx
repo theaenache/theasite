@@ -10,7 +10,6 @@ const slides = [
   { label: 'About',    href: '/about' },
 ];
 
-/* Base positions — centered and evenly spread */
 const baseLayouts = [
   { xPct: 12, yPct: 15, wPct: 18, hPct: 32, rot: -3 },
   { xPct: 33, yPct: 22, wPct: 16, hPct: 28, rot:  2 },
@@ -18,150 +17,100 @@ const baseLayouts = [
   { xPct: 74, yPct: 20, wPct: 16, hPct: 30, rot:  3 },
 ];
 
-/* Draggable photo component */
-function DraggablePhoto({ photo, layout, slideLabel, isDraggingAny, setIsDraggingAny }) {
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
-  const [isDragging, setIsDragging] = useState(false);
-  const [isLifted, setIsLifted] = useState(false);
-  const dragStart = useRef(null);
+const aboutLayouts = [
+  { xPct: 20, yPct: 5, wPct: 22, hPct: 66, rot: -2 },
+  { xPct: 57, yPct: 8, wPct: 22, hPct: 66, rot:  2 },
+];
 
-  const onMouseDown = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    dragStart.current = {
-      mouseX: e.clientX,
-      mouseY: e.clientY,
-      offsetX: offset.x,
-      offsetY: offset.y,
-    };
-    setIsDragging(true);
-    setIsLifted(true);
-    setIsDraggingAny(true);
-  };
+const slidePhotos = [
+  [ // Blog
+    { src: null },
+    { src: null },
+    { src: null },
+    { src: null },
+  ],
+  [ // Recipes
+    { src: null },
+    { src: null },
+    { src: null },
+    { src: null },
+  ],
+  [ // Projects
+    { src: null },
+    { src: null },
+    { src: null },
+    { src: null },
+  ],
+  [ // Visual
+    { src: null },
+    { src: null },
+    { src: null },
+    { src: null },
+  ],
+  [ // About — two tall photo strips
+    { src: '/images/slideshow/about/aboutss-1.png' },
+    { src: '/images/slideshow/about/aboutss-2.png' },
+  ],
+];
 
-  const onTouchStart = (e) => {
-    e.stopPropagation();
-    const touch = e.touches[0];
-    dragStart.current = {
-      mouseX: touch.clientX,
-      mouseY: touch.clientY,
-      offsetX: offset.x,
-      offsetY: offset.y,
-    };
-    setIsDragging(true);
-    setIsLifted(true);
-    setIsDraggingAny(true);
-  };
-
-  useEffect(() => {
-    if (!isDragging) return;
-
-    const onMouseMove = (e) => {
-      if (!dragStart.current) return;
-      setOffset({
-        x: dragStart.current.offsetX + (e.clientX - dragStart.current.mouseX),
-        y: dragStart.current.offsetY + (e.clientY - dragStart.current.mouseY),
-      });
-    };
-
-    const onTouchMove = (e) => {
-      if (!dragStart.current) return;
-      const touch = e.touches[0];
-      setOffset({
-        x: dragStart.current.offsetX + (touch.clientX - dragStart.current.mouseX),
-        y: dragStart.current.offsetY + (touch.clientY - dragStart.current.mouseY),
-      });
-    };
-
-    const onUp = () => {
-      setIsDragging(false);
-      setIsLifted(false);
-      setIsDraggingAny(false);
-      dragStart.current = null;
-    };
-
-    window.addEventListener('mousemove', onMouseMove);
-    window.addEventListener('mouseup', onUp);
-    window.addEventListener('touchmove', onTouchMove, { passive: true });
-    window.addEventListener('touchend', onUp);
-
-    return () => {
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('mouseup', onUp);
-      window.removeEventListener('touchmove', onTouchMove);
-      window.removeEventListener('touchend', onUp);
-    };
-  }, [isDragging]);
+function PhotoPanel({ slide, si, slideLabel }) {
+  const isAbout = slideLabel === 'About';
+  const photos = slidePhotos[si];
+  const layouts = isAbout ? aboutLayouts : baseLayouts;
 
   return (
-    <div
-      onMouseDown={onMouseDown}
-      onTouchStart={onTouchStart}
-      style={{
-        position: 'absolute',
-        left: `${layout.xPct}%`,
-        top: `${layout.yPct}%`,
-        width: `${layout.wPct}%`,
-        paddingBottom: `${layout.hPct}%`,
-        transform: `translate(${offset.x}px, ${offset.y}px) rotate(${layout.rot + (isLifted ? 1.5 : 0)}deg)`,
-        boxShadow: isLifted
-          ? '0 16px 40px rgba(84,22,29,0.25)'
-          : '0 4px 20px rgba(84,22,29,0.1)',
-        cursor: isDragging ? 'grabbing' : 'grab',
-        zIndex: isLifted ? 20 : 1,
-        transition: isDragging ? 'box-shadow 0.15s ease, transform 0.05s ease' : 'box-shadow 0.2s ease, transform 0.2s ease',
-        userSelect: 'none',
-      }}
-    >
-      <div style={{
-        position: 'absolute', inset: 0,
-        overflow: 'hidden',
-      }}>
-        {photo.src ? (
-          <img
-            src={photo.src}
-            alt={photo.label}
-            draggable={false}
-            style={{
-              width: '100%', height: '100%',
-              objectFit: 'cover',
-              filter: 'grayscale(100%) sepia(25%) contrast(1.08) brightness(1.08)',
-              display: 'block',
-              pointerEvents: 'none',
-            }}
-          />
-        ) : (
-          <div style={{
-            width: '100%', height: '100%',
-            background: 'rgba(84,22,29,0.07)',
-            border: '0.5px solid rgba(84,22,29,0.12)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
+    <div style={{ position: 'absolute', top: 0, left: `${si * (100 / slides.length)}%`, width: `${100 / slides.length}%`, height: '100%' }}>
+      {photos.map((photo, pi) => {
+        const layout = layouts[pi % layouts.length];
+        return (
+          <div key={pi} style={{
+            position: 'absolute',
+            left: `${layout.xPct}%`,
+            top: `${layout.yPct}%`,
+            width: `${layout.wPct}%`,
+            paddingBottom: `${layout.hPct}%`,
+            transform: `rotate(${layout.rot}deg)`,
+            boxShadow: '0 4px 20px rgba(84,22,29,0.1)',
+            overflow: 'hidden',
           }}>
-            <p style={{
-              fontFamily: "'Cinzel', serif",
-              fontSize: '9px', letterSpacing: '1.5px',
-              color: 'rgba(84,22,29,0.25)',
-              textAlign: 'center', padding: '8px',
-              pointerEvents: 'none',
-            }}>
-              {slideLabel.toUpperCase()}
-            </p>
+            <div style={{ position: 'absolute', inset: 0 }}>
+              {photo.src ? (
+                <img
+                  src={photo.src}
+                  alt={slideLabel}
+                  style={{
+                    width: '100%', height: '100%',
+                    objectFit: 'cover',
+                    filter: 'grayscale(100%) sepia(25%) contrast(1.08) brightness(1.08)',
+                    display: 'block',
+                  }}
+                />
+              ) : (
+                <div style={{
+                  width: '100%', height: '100%',
+                  background: 'rgba(84,22,29,0.07)',
+                  border: '0.5px solid rgba(84,22,29,0.12)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  <p style={{
+                    fontFamily: "'Cinzel', serif",
+                    fontSize: '9px', letterSpacing: '1.5px',
+                    color: 'rgba(84,22,29,0.25)',
+                    textAlign: 'center', padding: '8px',
+                  }}>
+                    {slideLabel.toUpperCase()}
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
-        )}
-      </div>
+        );
+      })}
     </div>
   );
 }
 
-/* Per-slide photo configs */
-const slidePhotos = slides.map((slide) => baseLayouts.map((l, i) => ({
-  src: null,
-  label: slide.label,
-})));
-
 function PhotoStrip({ current, fading }) {
-  const [isDraggingAny, setIsDraggingAny] = useState(false);
-
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 1 }}>
       <div style={{
@@ -169,27 +118,11 @@ function PhotoStrip({ current, fading }) {
         width: `${slides.length * 100}%`,
         height: '100%',
         transform: `translateX(${-current * (100 / slides.length)}%)`,
-        transition: fading && !isDraggingAny ? 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
+        transition: fading ? 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
         willChange: 'transform',
       }}>
         {slides.map((slide, si) => (
-          <div key={si} style={{
-            position: 'absolute', top: 0,
-            left: `${si * (100 / slides.length)}%`,
-            width: `${100 / slides.length}%`,
-            height: '100%',
-          }}>
-            {slidePhotos[si].map((photo, pi) => (
-              <DraggablePhoto
-                key={pi}
-                photo={photo}
-                layout={baseLayouts[pi]}
-                slideLabel={slide.label}
-                isDraggingAny={isDraggingAny}
-                setIsDraggingAny={setIsDraggingAny}
-              />
-            ))}
-          </div>
+          <PhotoPanel key={si} slide={slide} si={si} slideLabel={slide.label} />
         ))}
       </div>
     </div>
@@ -250,12 +183,10 @@ export default function Slideshow() {
     >
       <PhotoStrip current={current} fading={fading} />
 
-      {/* Clickable overlay — disabled while dragging */}
       <Link href={slides[current].href} style={{
         position: 'absolute', inset: 0, zIndex: 2, display: 'block',
       }}/>
 
-      {/* Category label */}
       <div style={{
         position: 'absolute', bottom: '80px',
         left: 'calc(var(--border-width) + 32px)',
@@ -279,7 +210,6 @@ export default function Slideshow() {
         </h2>
       </div>
 
-      {/* Dot indicators */}
       <div style={{
         position: 'absolute', bottom: '32px',
         left: '50%', transform: 'translateX(-50%)',
