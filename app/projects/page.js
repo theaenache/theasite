@@ -36,7 +36,7 @@ const projects = [
     title: 'Sekeh Lab Deep Learning Bootcamp',
     year: 'July 2025',
     tags: ['Teaching', 'Neural Networks', 'Creative Direction', 'NSF'],
-    description: 'In July 2025 I had the chance to be part of the third annual NSF-SDSU-Sekeh Lab Deep Learning Bootcamp. This event brought together students and researchers for a full day of workshops and talks on AI and neural networks, organized by my PI, Dr. Salimeh Yasaei Sekeh, with support from the National Science Foundation.\n\nMy research team, Jake Basile and Saad Alrajhi, and I developed and delivered the opening workshop of the day: Introduction to Neural Networks. It was the first time I had taught something I had learned in a setting like this. We also had guest speakers from the University of Utah, UT Austin, Voxel51, and SDSU presenting on advanced AI topics throughout the afternoon.\n\nBeyond the research side, I also designed the bootcamp logo, the Sekeh Lab logo, t-shirts, and handouts for the event. Getting to contribute creatively to something academic was very fun :)',
+    description: 'In July 2025 I had the chance to be part of something genuinely fun. The NSF-SDSU-Sekeh Lab Deep Learning Bootcamp brought together students and researchers for a full day of workshops and talks on AI and neural networks, organized by my PI, Dr. Salimeh Yasaei Sekeh, with support from the National Science Foundation.\n\nMy research team, Jake Basile and Saad Alrajhi, and I developed and delivered the opening workshop of the day: Introduction to Neural Networks. It was the first time I had taught something I had spent a year learning, which was its own kind of experience. We also had guest speakers from the University of Utah, UT Austin, Voxel51, and SDSU presenting on advanced AI topics throughout the afternoon.\n\nBeyond the research side, I also designed the bootcamp logo, the Sekeh Lab logo, t-shirts, and handouts for the event. Getting to contribute creatively to something academic felt like exactly the kind of work I want to keep doing.',
     collaborators: 'PI: Salimeh Yasaei Sekeh · Jake Basile, Saad Alrajhi, Joshua Andle, Mary Isabelle Wisell, Aditi Naiknaware, Francis Fernandez',
     link: 'https://www.youtube.com/watch?v=uyqLTw3djKk',
     linkLabel: 'Watch the Workshop',
@@ -216,8 +216,8 @@ export default function ProjectsPage() {
                 <div key={`proj-${i}`} className="project-tile" onClick={() => setSelected(project)}>
                   {project.cover && <img src={project.cover} alt={project.title} style={{ width:'100%', height:'100%', objectFit:'cover' }}/>}
                   <div className="project-overlay">
-                    <p style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'18px', fontWeight:'500', color:'#FFFBF0', textAlign:'center', lineHeight:'1.3' }}>{project.title}</p>
-                    <p style={{ fontFamily:"'Cinzel', serif", fontSize:'9px', letterSpacing:'1.5px', color:'rgba(255,251,240,0.55)', marginTop:'10px' }}>CLICK TO LEARN MORE</p>
+                    <p style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'clamp(13px, 2.5vw, 18px)', fontWeight:'500', color:'#FFFBF0', textAlign:'center', lineHeight:'1.3' }}>{project.title}</p>
+                    <p style={{ fontFamily:"'Cinzel', serif", fontSize:'clamp(7px, 1.5vw, 9px)', letterSpacing:'1.5px', color:'rgba(255,251,240,0.55)', marginTop:'8px' }}>CLICK TO LEARN MORE</p>
                   </div>
                 </div>
               </>
@@ -226,8 +226,8 @@ export default function ProjectsPage() {
                 <div key={`proj-${i}`} className="project-tile" onClick={() => setSelected(project)}>
                   {project.cover && <img src={project.cover} alt={project.title} style={{ width:'100%', height:'100%', objectFit:'cover' }}/>}
                   <div className="project-overlay">
-                    <p style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'18px', fontWeight:'500', color:'#FFFBF0', textAlign:'center', lineHeight:'1.3' }}>{project.title}</p>
-                    <p style={{ fontFamily:"'Cinzel', serif", fontSize:'9px', letterSpacing:'1.5px', color:'rgba(255,251,240,0.55)', marginTop:'10px' }}>CLICK TO LEARN MORE</p>
+                    <p style={{ fontFamily:"'Cormorant Garamond', serif", fontSize:'clamp(13px, 2.5vw, 18px)', fontWeight:'500', color:'#FFFBF0', textAlign:'center', lineHeight:'1.3' }}>{project.title}</p>
+                    <p style={{ fontFamily:"'Cinzel', serif", fontSize:'clamp(7px, 1.5vw, 9px)', letterSpacing:'1.5px', color:'rgba(255,251,240,0.55)', marginTop:'8px' }}>CLICK TO LEARN MORE</p>
                   </div>
                 </div>
                 <div key={`pat-${i}`} className="pattern-tile">
