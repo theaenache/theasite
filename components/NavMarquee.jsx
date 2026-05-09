@@ -57,6 +57,11 @@ export default function NavMarquee() {
         .nav-marquee-track:hover {
           animation-play-state: paused;
         }
+        @media (max-width: 768px) {
+          .nav-marquee-track {
+            animation-duration: 60s;
+          }
+        }
         .nav-cat-link {
           font-family: 'Cinzel', serif;
           font-size: 11px;

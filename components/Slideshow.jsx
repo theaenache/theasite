@@ -11,10 +11,10 @@ const slides = [
 ];
 
 const baseLayouts = [
-  { xPct: 12, yPct: 15, wPct: 18, hPct: 32, rot: -3 },
-  { xPct: 33, yPct: 22, wPct: 16, hPct: 28, rot:  2 },
-  { xPct: 54, yPct: 12, wPct: 20, hPct: 35, rot: -2 },
-  { xPct: 74, yPct: 20, wPct: 16, hPct: 30, rot:  3 },
+  { xPct: 12, yPct: 30, wPct: 18, hPct: 32, rot: -3 },
+  { xPct: 33, yPct: 36, wPct: 16, hPct: 28, rot:  2 },
+  { xPct: 54, yPct: 28, wPct: 20, hPct: 35, rot: -2 },
+  { xPct: 74, yPct: 34, wPct: 16, hPct: 30, rot:  3 },
 ];
 
 const aboutLayouts = [
@@ -53,6 +53,31 @@ const slidePhotos = [
   ],
 ];
 
+const wiggleStyle = `
+  @keyframes wiggle-left {
+    0%   { transform: rotate(-3deg) scale(1); }
+    100% { transform: rotate(-6deg) scale(1.02); }
+  }
+  @keyframes wiggle-right {
+    0%   { transform: rotate(3deg) scale(1); }
+    100% { transform: rotate(6deg) scale(1.02); }
+  }
+  @keyframes wiggle-neg2 {
+    0%   { transform: rotate(-2deg) scale(1); }
+    100% { transform: rotate(-5deg) scale(1.02); }
+  }
+  @keyframes wiggle-pos2 {
+    0%   { transform: rotate(2deg) scale(1); }
+    100% { transform: rotate(5deg) scale(1.02); }
+  }
+  .photo-card { transition: box-shadow 0.2s ease; }
+  .photo-card:hover { box-shadow: 0 8px 32px rgba(84,22,29,0.2) !important; }
+  .photo-card.rot-n3:hover { animation: wiggle-left 0.2s ease forwards; }
+  .photo-card.rot-p2:hover { animation: wiggle-right 0.2s ease forwards; }
+  .photo-card.rot-n2:hover { animation: wiggle-neg2 0.2s ease forwards; }
+  .photo-card.rot-p3:hover { animation: wiggle-pos2 0.2s ease forwards; }
+`;
+
 function PhotoPanel({ slide, si, slideLabel }) {
   const isAbout = slideLabel === 'About';
   const photos = slidePhotos[si];
@@ -62,14 +87,17 @@ function PhotoPanel({ slide, si, slideLabel }) {
     <div style={{ position: 'absolute', top: 0, left: `${si * (100 / slides.length)}%`, width: `${100 / slides.length}%`, height: '100%' }}>
       {photos.map((photo, pi) => {
         const layout = layouts[pi % layouts.length];
+        const rotMap = { '-3': 'rot-n3', '2': 'rot-p2', '-2': 'rot-n2', '3': 'rot-p3' };
+        const rotClass = rotMap[String(layout.rot)] || (layout.rot < 0 ? 'rot-n2' : 'rot-p2');
         return (
-          <div key={pi} style={{
+          <div key={pi} className={`photo-card ${rotClass}`} style={{
             position: 'absolute',
             left: `${layout.xPct}%`,
             top: `${layout.yPct}%`,
             width: `${layout.wPct}%`,
             paddingBottom: `${layout.hPct}%`,
             transform: `rotate(${layout.rot}deg)`,
+            '--rot': `${layout.rot}deg`,
             boxShadow: '0 4px 20px rgba(84,22,29,0.1)',
             overflow: 'hidden',
           }}>
@@ -181,10 +209,12 @@ export default function Slideshow() {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
+      <style>{wiggleStyle}</style>
       <PhotoStrip current={current} fading={fading} />
 
       <Link href={slides[current].href} style={{
         position: 'absolute', inset: 0, zIndex: 2, display: 'block',
+        pointerEvents: 'none',
       }}/>
 
       <div style={{
@@ -209,6 +239,44 @@ export default function Slideshow() {
           {slides[current].label}
         </h2>
       </div>
+
+      {/* Left arrow */}
+      <button
+        onClick={() => goTo((current - 1 + slides.length) % slides.length)}
+        aria-label="Previous slide"
+        style={{
+          position: 'absolute', left: 'calc(var(--border-width) + 12px)',
+          top: '50%', transform: 'translateY(-50%)',
+          zIndex: 10, background: 'none', border: 'none',
+          cursor: 'pointer', padding: '8px',
+          opacity: 0.25, transition: 'opacity 0.2s ease',
+          fontFamily: "'Cinzel', serif", fontSize: '16px',
+          color: '#54161D', lineHeight: 1,
+        }}
+        onMouseEnter={e => e.currentTarget.style.opacity = 0.7}
+        onMouseLeave={e => e.currentTarget.style.opacity = 0.25}
+      >
+        ‹
+      </button>
+
+      {/* Right arrow */}
+      <button
+        onClick={() => goTo((current + 1) % slides.length)}
+        aria-label="Next slide"
+        style={{
+          position: 'absolute', right: 'calc(var(--border-width) + 12px)',
+          top: '50%', transform: 'translateY(-50%)',
+          zIndex: 10, background: 'none', border: 'none',
+          cursor: 'pointer', padding: '8px',
+          opacity: 0.25, transition: 'opacity 0.2s ease',
+          fontFamily: "'Cinzel', serif", fontSize: '16px',
+          color: '#54161D', lineHeight: 1,
+        }}
+        onMouseEnter={e => e.currentTarget.style.opacity = 0.7}
+        onMouseLeave={e => e.currentTarget.style.opacity = 0.25}
+      >
+        ›
+      </button>
 
       <div style={{
         position: 'absolute', bottom: '32px',
