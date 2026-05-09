@@ -95,17 +95,17 @@ export default function NavMarquee() {
       `}</style>
 
       <div className="nav-marquee-track">
-        {doubled.map((item) =>
+        {doubled.map((item, i) =>
           item.type === 'pattern' ? (
             <img
-              key={item.key}
+              key={i}
               src={item.src}
               alt=""
               className="nav-pattern"
             />
           ) : (
             <a
-              key={item.key}
+              key={i}
               href={item.href}
               className="nav-cat-link"
             >
