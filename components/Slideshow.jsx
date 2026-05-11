@@ -26,6 +26,11 @@ const projectsLayouts = [
   { xPct: 58, yPct: 0, wPct: 22, rot: -3 },
 ];
 
+const recipesLayouts = [
+  { xPct: 20, yPct: 0, wPct: 22, rot: -1 },
+  { xPct: 56, yPct: 0, wPct: 22, rot:  4 },
+];
+
 const slidePhotos = [
   [                                                              // About
     { src: '/images/slideshow/about/aboutss-1.png' },
@@ -37,7 +42,10 @@ const slidePhotos = [
   ],
   [{ src: null }, { src: null }, { src: null }, { src: null }], // Visual
   [{ src: null }, { src: null }, { src: null }, { src: null }], // Blog
-  [{ src: null }, { src: null }, { src: null }, { src: null }], // Recipes
+  [                                                              // Recipes
+    { src: '/images/slideshow/recipes/recipess-1.png' },
+    { src: '/images/slideshow/recipes/recipess-2.png' },
+  ],
 ];
 
 function PhotoCard({ photo, layout, slideLabel, slideHref, isAbout }) {
@@ -136,9 +144,13 @@ function PhotoCard({ photo, layout, slideLabel, slideHref, isAbout }) {
 function PhotoPanel({ slide, si }) {
   const isAbout = slide.label === 'About';
   const isProjects = slide.label === 'Projects';
-  const isStrip = isAbout || isProjects;
+  const isRecipes = slide.label === 'Recipes';
+  const isStrip = isAbout || isProjects || isRecipes;
   const photos = slidePhotos[si];
-  const layouts = isAbout ? aboutLayouts : isProjects ? projectsLayouts : baseLayouts;
+  const layouts = isAbout ? aboutLayouts
+    : isProjects ? projectsLayouts
+    : isRecipes ? recipesLayouts
+    : baseLayouts;
 
   return (
     <div style={{
