@@ -119,7 +119,7 @@ export default function AboutPage() {
           {/* Bio */}
           <div>
             <h1 style={{
-              fontFamily: "'Aston', serif", /* swap to "'Vilaka', serif" to use Vilaka */
+              fontFamily: "'Aston', serif",
               fontSize: 'clamp(2rem, 4vw, 3rem)',
               fontWeight: '400', color: '#54161D',
               lineHeight: '1.1', marginBottom: '28px',
@@ -127,37 +127,44 @@ export default function AboutPage() {
             }}>
               Thea L. Enache
             </h1>
+
             <div style={{ display: 'flex', justifyContent: 'center', margin: '12px 0 28px' }}>
-  <img src="/titlesep.png" alt="" style={{ height: '22px', width: 'auto', opacity: 0.9 }} />
-</div>
+              <img src="/titlesep.png" alt="" style={{ height: '22px', width: 'auto', opacity: 0.9 }} />
+            </div>
+
             <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>
-              I grew up between two places: Romania, my first language and where my familial lineage is rooted, and the Bay Area, where I spent the majority of my adolesence. Both of those places shaped how I see the world and what I care about. In Romania, I saw up close how inequity shapes health outcomes in a system that is underfunded, understaffed, and often corrupt. In the Bay Area, I saw up close how innovation can be a powerful force for good but also how it can exacerbate inequities when it's not built with everyone in mind.
+              I grew up between two places: Romania, my first language and where my familial lineage is rooted, and the Bay Area, where I spent the majority of my adolesence. Both of those places shaped how I see the world and what I care about. In Romania, I saw up close how inequity shapes health outcomes in a system that is beyond understaffed and underfunded. In the Bay Area, I saw up close how innovation can be a powerful force for good but also how it can exacerbate inequities when it's not built with everyone in mind.
             </p>
+
             <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>
-              In Romania, care was something you and your family negotiated constantly. What happened to you in a medical setting depended almost entirely on who you slipped a gift to at the door, at the desk, at the cardiologist, wherever you ended up. Records were handwritten on paper, and symptoms were only addressed if you were lucky and had paid enough people by the time you needed it. I saw people I loved operated on with tools that should not have been used. Consequentially, I understood very early on that medicine was not neutral, that systems were not neutral, but rather that who you are and what you have determines what you receive, often long before you're sick.
+              In Romania, care is something you and your family negotiate constantly. What happens to you in a medical setting depends almost entirely on who you slipped some incentives (via cheese, wine, money, etc.) to at the door wherever you ended up. Health records are handwritten on paper, and symptoms are only addressed if you are lucky and have spread enough "love" by the time you need it. Often even that isn't enough when the healthcare system is as burdened as it is, I experienced that first hand. I saw people I love face the repercussions from undergoing brain surgery with tools that were contaminated at a very young age due to a simple lack of access to resources. Consequentially, I understood very early on that medicine was not neutral, that systems were not neutral, but rather that who you are, what you have, and particularly where you live, determines what you receive, often long before you're sick.
             </p>
+
             <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>
-              In California, the Bay Area taught me to believe in what technology could do. I grew up taking things apart with my father, convinced that innovation could solve things. In fourth grade I was scared to take my hands off the handlebars to signal a turn, so I built lights that would do it for me: water bottle tops, a plastic box, LEDs, spare parts. I loved building things that solved something. But slowly and then all at once, the Bay Area also showed me who the big innovations were actually built for. A different flavor of a similar problem.
+              In California, the Bay Area taught me to always keep an eye on tech and what the field was up to. I grew up taking things apart with my father, and my fourth language was Python. I was convinced that innovation could solve all the mild inconveniences in my life. In fourth grade I was scared to take my hands off the handlebars to signal a turn, so I built lights that would do it for me: the top halfs of water bottles, a plastic box with two arrows drilled into it, LEDs, spare parts, and a dream. I loved building things that solved something. Slowly and then all at once, things got far more serious, and I saw who the big innovations were actually built for. Also, who they often failed to keep in mind. I continue to thoroughly enjoy developing targeted solutions to specific problems, but I have since gained significant context on the broader scale implications of certain broader scale initiatives. I have learned that innovation is not inherently good, and that it can be a powerful force for harm if it is not built with equity in mind.
             </p>
+
             <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>
-              I'm somewhere between those two places, academically and culturally. That used to feel like a disadvantage, but I've since found my footing in it.
+              I now exist in that grey zone, somewhere between those two places. I aim to utilize computational methods to build tools for public health, with equity always considered and always centered.
             </p>
+
             <p style={{ marginBottom: '20px', color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>
-              I'm Thea Enache, completing dual degrees in Public Health and Mathematical Data Science + Computer Science at San Diego State University. My work is at the intersection of public health, AI, and computational modeling. Sometimes that's epidemiological modeling, sometimes it's building clinical AI tools, sometimes it's just asking whether what we've already built is actually reaching the people it should. I want to work on that problem across global health epi, health-focused AI, and the policy questions that determine whether any of it matters on the ground.
+              To hopefully provide me with the background I need to embark on this, I am completing dual degrees in Public Health and Mathematical Data Science + Computer Science at San Diego State University. I have been very fortunate to work at the intersection of public health and computational modeling in various regards early in my career. Sometimes that has been through epidemiological modeling, I have worked on developing clinical AI tools to address specific health access problems, and a lot of the times it has been asking whether what we've already built is actually reaching the people it should, which has been some of my favourite work thus far. I eventually want to work on problems like this across the globe.
             </p>
+
             <p style={{ color: 'rgba(84,22,29,0.8)', lineHeight: '1.8', textAlign: 'left' }}>
               Please feel free to pick around this page to follow along on my journey :)
             </p>
 
             <div style={{ marginTop: '36px' }}>
               <a href="/cv.pdf" download className="cv-button">
-                <span>↓</span> DOWNLOAD CV
+                ↓ DOWNLOAD CV
               </a>
             </div>
           </div>
         </div>
 
-        <div style={{ borderTop: '0.5px solid rgba(84,22,29,0.15)', marginBottom: '60px' }}/>
+        <div style={{ borderTop: '0.5px solid rgba(84,22,29,0.15)', marginBottom: '60px' }} />
 
         <div>
           <p style={{
