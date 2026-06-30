@@ -2,7 +2,6 @@
 
 const categories = [
   { label: 'Blog',     href: '/blog' },
-  { label: 'Recipes',  href: '/recipes' },
   { label: 'Projects', href: '/projects' },
   { label: 'Visual',   href: '/visual' },
   { label: 'About',    href: '/about' },
@@ -52,7 +51,7 @@ export default function NavMarquee() {
           display: flex;
           align-items: center;
           width: max-content;
-          animation: navMarquee 32s linear infinite;
+          animation: navMarquee 60s linear infinite;
         }
         .nav-marquee-track:hover {
           animation-play-state: paused;

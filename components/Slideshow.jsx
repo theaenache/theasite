@@ -6,7 +6,6 @@ const slides = [
   { label: 'Projects', href: '/projects' },
   { label: 'Visual',   href: '/visual' },
   { label: 'Blog',     href: '/blog' },
-  { label: 'Recipes',  href: '/recipes' },
 ];
 
 const baseLayouts = [
@@ -26,9 +25,14 @@ const projectsLayouts = [
   { xPct: 58, yPct: 0, wPct: 22, rot: -3 },
 ];
 
-const recipesLayouts = [
-  { xPct: 20, yPct: 0, wPct: 22, rot: -1 },
-  { xPct: 56, yPct: 0, wPct: 22, rot:  4 },
+const visualLayouts = [
+  { xPct: 18, yPct: 0, wPct: 22, rot:  2 },
+  { xPct: 56, yPct: 0, wPct: 22, rot: -2 },
+];
+
+const blogLayouts = [
+  { xPct: 16, yPct: 0, wPct: 22, rot: -3 },
+  { xPct: 57, yPct: 0, wPct: 22, rot:  3 },
 ];
 
 const slidePhotos = [
@@ -40,11 +44,13 @@ const slidePhotos = [
     { src: '/images/slideshow/projects/projss-1.png' },
     { src: '/images/slideshow/projects/projss-2.png' },
   ],
-  [{ src: null }, { src: null }, { src: null }, { src: null }], // Visual
-  [{ src: null }, { src: null }, { src: null }, { src: null }], // Blog
-  [                                                              // Recipes
-    { src: '/images/slideshow/recipes/recipess-1.png' },
-    { src: '/images/slideshow/recipes/recipess-2.png' },
+  [                                                              // Visual
+    { src: '/images/slideshow/visual/visualss-1.png' },
+    { src: '/images/slideshow/visual/visualss-2.png' },
+  ],
+  [                                                              // Blog
+    { src: '/images/slideshow/blog/blogss-1.png' },
+    { src: '/images/slideshow/blog/blogss-2.png' },
   ],
 ];
 
@@ -144,12 +150,14 @@ function PhotoCard({ photo, layout, slideLabel, slideHref, isAbout }) {
 function PhotoPanel({ slide, si }) {
   const isAbout = slide.label === 'About';
   const isProjects = slide.label === 'Projects';
-  const isRecipes = slide.label === 'Recipes';
-  const isStrip = isAbout || isProjects || isRecipes;
+  const isVisual = slide.label === 'Visual';
+  const isBlog = slide.label === 'Blog';
+  const isStrip = isAbout || isProjects || isVisual || isBlog;
   const photos = slidePhotos[si];
   const layouts = isAbout ? aboutLayouts
     : isProjects ? projectsLayouts
-    : isRecipes ? recipesLayouts
+    : isVisual ? visualLayouts
+    : isBlog ? blogLayouts
     : baseLayouts;
 
   return (
