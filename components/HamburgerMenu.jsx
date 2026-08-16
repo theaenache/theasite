@@ -8,7 +8,7 @@ const menuItems = [
   { label: 'Projects', href: '/projects' },
   { label: 'Visual', href: '/visual' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Recipes', href: '/recipes' },
+  { label: 'Intake', href: '/intake' },
 ];
 
 /* small SVG embroidery motif shown beside each hovered item */

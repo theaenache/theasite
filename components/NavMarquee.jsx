@@ -4,6 +4,7 @@ const categories = [
   { label: 'Blog',     href: '/blog' },
   { label: 'Projects', href: '/projects' },
   { label: 'Visual',   href: '/visual' },
+  { label: 'Intake',   href: '/intake' },
   { label: 'About',    href: '/about' },
 ];
 
