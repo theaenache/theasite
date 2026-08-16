@@ -19,7 +19,7 @@
   --border-width: 38px;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overscroll-behavior-y: none; }
 
 body {
   background-color: var(--cream);
@@ -27,7 +27,8 @@ body {
   font-family: var(--font-body);
   font-weight: 300;
   min-height: 100vh;
-  overflow-x: hidden; 
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
 }
 
 h1 { font-family: var(--font-display); font-weight: 500; }

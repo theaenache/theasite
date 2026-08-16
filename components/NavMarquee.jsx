@@ -34,6 +34,7 @@ const doubled = [...items, ...items, ...items, ...items, ...items, ...items, ...
 export default function NavMarquee() {
   return (
     <div style={{
+      position: 'relative', zIndex: 51,
       width: '100%',
       borderTop: '0.5px solid rgba(84,22,29,0.12)',
       borderBottom: '0.5px solid rgba(84,22,29,0.12)',

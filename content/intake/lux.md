@@ -2,11 +2,11 @@
 title: "LUX"
 creator: "Rosalía, London Symphony Orchestra"
 category: "Albums"
-rating: 5
+rating: 10.0
 date: "2026-07-15"
 cover: "/images/intake/albums/LUX-CD-FRONT.webp"
 ---
-WOWWWW. This album was incredible!! 
+WOWWWW.
 
 I cried at least 3 times at her tour when she performed this live (no backtrack, with a LIVE ORCHESTRA btw). She is the most incredible vocalist I have witnessed in my life.
 

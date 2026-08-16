@@ -16,10 +16,11 @@ const doubled = [...friends, ...friends];
 export default function FriendsMarquee() {
   return (
     <div style={{
+      position: 'relative', zIndex: 51,
       width: '100%',
       borderTop: '0.5px solid rgba(84,22,29,0.15)',
       borderBottom: '0.5px solid rgba(84,22,29,0.15)',
-      background: 'rgba(84,22,29,0.03)',
+      background: 'linear-gradient(rgba(84,22,29,0.03), rgba(84,22,29,0.03)), var(--cream)',
       padding: '18px 0',
       overflow: 'hidden',
     }}>

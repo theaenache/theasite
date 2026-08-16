@@ -14,7 +14,7 @@ export default function Header() {
       height: '64px',
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       padding: '0 calc(var(--border-width) + 20px)',
-      zIndex: 49,
+      zIndex: 51,
       background: 'rgba(255,251,240,0.92)',
       backdropFilter: 'blur(8px)',
       borderBottom: '0.5px solid rgba(84,22,29,0.1)',

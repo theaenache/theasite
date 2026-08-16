@@ -1,15 +1,12 @@
 'use client';
 import { useMemo, useState } from 'react';
 
-function Stars({ rating }) {
-  const pct = Math.max(0, Math.min(100, (rating / 5) * 100));
-  const starStyle = { fontFamily: "'Cinzel', serif", fontSize: '13px', letterSpacing: '2px', whiteSpace: 'nowrap' };
+function RatingBadge({ rating }) {
+  const n = Number(rating || 0);
   return (
-    <span style={{ position: 'relative', display: 'inline-block', ...starStyle, color: 'rgba(84,22,29,0.25)' }}>
-      ★★★★★
-      <span style={{ position: 'absolute', top: 0, left: 0, width: `${pct}%`, overflow: 'hidden', ...starStyle, color: '#54161D' }}>
-        ★★★★★
-      </span>
+    <span style={{ fontFamily: "'Cinzel', serif", fontSize: '13px', letterSpacing: '1px', whiteSpace: 'nowrap', color: '#54161D' }}>
+      {n === 10 ? '10' : n.toFixed(1)}
+      <span style={{ color: 'rgba(84,22,29,0.4)' }}>/10</span>
     </span>
   );
 }
@@ -60,7 +57,7 @@ function IntakeModal({ item, onClose }) {
         )}
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
-          <Stars rating={item.rating || 0} />
+          <RatingBadge rating={item.rating} />
           {item.date && (
             <p style={{ fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '1.5px', color: 'rgba(84,22,29,0.45)' }}>
               {new Date(item.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
@@ -88,8 +85,15 @@ function IntakeModal({ item, onClose }) {
 
 const BASE_CATEGORIES = ['Books', 'Albums', 'Films', 'Places', 'Things', 'Art'];
 
+const SORT_OPTIONS = [
+  { value: 'rating-desc', label: 'Highest Rated' },
+  { value: 'date-desc', label: 'Newest First' },
+  { value: 'date-asc', label: 'Oldest First' },
+];
+
 export default function IntakeGrid({ items }) {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [sortBy, setSortBy] = useState('rating-desc');
   const [selected, setSelected] = useState(null);
 
   const categories = useMemo(() => {
@@ -101,6 +105,14 @@ export default function IntakeGrid({ items }) {
   const filtered = activeCategory === 'All'
     ? items
     : items.filter(i => i.category === activeCategory);
+
+  const sorted = useMemo(() => {
+    const arr = [...filtered];
+    if (sortBy === 'date-desc') arr.sort((a, b) => new Date(b.date) - new Date(a.date));
+    else if (sortBy === 'date-asc') arr.sort((a, b) => new Date(a.date) - new Date(b.date));
+    else arr.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+    return arr;
+  }, [filtered, sortBy]);
 
   return (
     <>
@@ -131,21 +143,50 @@ export default function IntakeGrid({ items }) {
           background: #54161D;
           color: #FFFBF0;
         }
+        .intake-sort {
+          font-family: 'Cinzel', serif;
+          font-size: 10px;
+          letter-spacing: 1px;
+          padding: 8px 28px 8px 12px;
+          border: 0.5px solid rgba(84,22,29,0.25);
+          background: #FFFBF0;
+          color: rgba(84,22,29,0.7);
+          cursor: pointer;
+          appearance: none;
+          -webkit-appearance: none;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0L5 6L10 0' fill='%2354161D' fill-opacity='0.5'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: right 10px center;
+        }
+        .intake-sort:hover { border-color: rgba(84,22,29,0.45); }
       `}</style>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '40px' }}>
-        {categories.map(cat => (
-          <button
-            key={cat}
-            className={`intake-tab${activeCategory === cat ? ' active' : ''}`}
-            onClick={() => setActiveCategory(cat)}
-          >
-            {cat.toUpperCase()}
-          </button>
-        ))}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+          {categories.map(cat => (
+            <button
+              key={cat}
+              className={`intake-tab${activeCategory === cat ? ' active' : ''}`}
+              onClick={() => setActiveCategory(cat)}
+            >
+              {cat.toUpperCase()}
+            </button>
+          ))}
+        </div>
+
+        <select
+          className="intake-sort"
+          value={sortBy}
+          onChange={e => setSortBy(e.target.value)}
+          aria-label="Sort entries"
+        >
+          {SORT_OPTIONS.map(opt => (
+            <option key={opt.value} value={opt.value}>{opt.label.toUpperCase()}</option>
+          ))}
+        </select>
       </div>
 
-      {filtered.length === 0 ? (
+      {sorted.length === 0 ? (
         <p style={{ color: 'rgba(84,22,29,0.4)', fontFamily: "'Cormorant Garamond', serif", fontSize: '20px' }}>
           Nothing here yet.
         </p>
@@ -155,7 +196,7 @@ export default function IntakeGrid({ items }) {
           gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
           gap: '24px',
         }}>
-          {filtered.map(item => (
+          {sorted.map(item => (
             <button key={item.slug} className="intake-card" onClick={() => setSelected(item)}>
               {item.cover ? (
                 <div style={{ width: '100%', aspectRatio: '1/1', overflow: 'hidden', background: 'rgba(84,22,29,0.08)' }}>
@@ -176,7 +217,7 @@ export default function IntakeGrid({ items }) {
                   }}>
                     {item.category?.toUpperCase()}
                   </span>
-                  <Stars rating={item.rating || 0} />
+                  <RatingBadge rating={item.rating} />
                 </div>
                 <h2 style={{
                   fontFamily: "'Cormorant Garamond', serif",

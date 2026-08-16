@@ -8,7 +8,7 @@ export default function RomanianBorder() {
           position: fixed;
           top: 0;
           width: 38px;
-          height: 100vh;
+          height: calc(100vh + 400px);
           z-index: 50;
           pointer-events: none;
           background: #FFFBF0 url(/border.png) repeat-y top / 100% auto;

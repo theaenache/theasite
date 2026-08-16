@@ -8,6 +8,8 @@ const socials = [
 export function HomeFooter() {
   return (
     <footer style={{
+      position: 'relative', zIndex: 51,
+      background: 'var(--cream)',
       padding: '24px calc(var(--border-width) + 24px)',
       borderTop: '0.5px solid rgba(84,22,29,0.1)',
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
@@ -41,6 +43,8 @@ export function HomeFooter() {
 export function MinimalFooter() {
   return (
     <footer style={{
+      position: 'relative', zIndex: 51,
+      background: 'var(--cream)',
       padding: '20px calc(var(--border-width) + 24px)',
       borderTop: '0.5px solid rgba(84,22,29,0.1)',
       textAlign: 'center',
