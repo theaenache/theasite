@@ -1,6 +1,6 @@
 import './globals.css';
-import RomanianBorder from '@/components/RomanianBorder';
 import Header from '@/components/Header';
+import { getSearchIndex } from '@/lib/searchIndex';
 
 export const metadata = {
   title: 'Thea Enache',
@@ -11,6 +11,8 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const searchIndex = getSearchIndex();
+
   return (
     <html lang="en">
       <head>
@@ -22,9 +24,8 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <RomanianBorder />
-        <Header />
-        <main style={{ paddingTop: '64px' }}>
+        <Header searchIndex={searchIndex} />
+        <main style={{ paddingTop: '76px' }}>
           {children}
         </main>
       </body>

@@ -2,6 +2,7 @@
 title: "The Look Issue X - Form Over Hue"
 date: "2026-05-04"
 tag: "Magazine Piece"
+visualTag: "Visual"
 cover: "/images/visual/issue10covers/7.png"
 sketch: "/images/visual/issue10covers/6.png"
 heroImage: true

@@ -7,7 +7,7 @@ export default function HomePage() {
   return (
     <>
       {/* Full screen slideshow (flush under the header) */}
-      <div style={{ marginTop: '-64px' }}>
+      <div style={{ marginTop: '-76px' }}>
         <Slideshow />
       </div>
 

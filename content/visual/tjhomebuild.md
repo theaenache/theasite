@@ -2,6 +2,7 @@
 title: "IRT x Project Mercy Home Build 2"
 date: "2026-05-02"
 tag: "Photo Album"
+visualTag: "Visual"
 location: "Valle del Campo, MX"
 cover: "/images/visual/tjhomebuild/tjhomebuild-b.png"
 sketch: "/images/visual/tjhomebuild/tjhomebuild-s.png"

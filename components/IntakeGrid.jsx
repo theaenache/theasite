@@ -91,10 +91,12 @@ const SORT_OPTIONS = [
   { value: 'date-asc', label: 'Oldest First' },
 ];
 
-export default function IntakeGrid({ items }) {
-  const [activeCategory, setActiveCategory] = useState('All');
+export default function IntakeGrid({ items, initialCategory, initialOpenSlug }) {
+  const [activeCategory, setActiveCategory] = useState(initialCategory || 'All');
   const [sortBy, setSortBy] = useState('rating-desc');
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(() =>
+    initialOpenSlug ? items.find(i => i.slug === initialOpenSlug) || null : null
+  );
 
   const categories = useMemo(() => {
     const fromItems = items.map(i => i.category).filter(Boolean);

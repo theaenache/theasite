@@ -16,23 +16,23 @@ const baseLayouts = [
 ];
 
 const aboutLayouts = [
-  { xPct: 18, yPct: 0, wPct: 22, rot: -2 },
-  { xPct: 55, yPct: 0, wPct: 22, rot:  2 },
+  { xPct: 12, yPct: 0, wPct: 22, rot: -2 },
+  { xPct: 61, yPct: 0, wPct: 22, rot:  2 },
 ];
 
 const projectsLayouts = [
-  { xPct: 15, yPct: 0, wPct: 22, rot: 3 },
-  { xPct: 58, yPct: 0, wPct: 22, rot: -3 },
+  { xPct: 9, yPct: 0, wPct: 22, rot: 3 },
+  { xPct: 64, yPct: 0, wPct: 22, rot: -3 },
 ];
 
 const visualLayouts = [
-  { xPct: 18, yPct: 0, wPct: 22, rot:  2 },
-  { xPct: 56, yPct: 0, wPct: 22, rot: -2 },
+  { xPct: 12, yPct: 0, wPct: 22, rot:  2 },
+  { xPct: 62, yPct: 0, wPct: 22, rot: -2 },
 ];
 
 const blogLayouts = [
-  { xPct: 16, yPct: 0, wPct: 22, rot: -3 },
-  { xPct: 57, yPct: 0, wPct: 22, rot:  3 },
+  { xPct: 10, yPct: 0, wPct: 22, rot: -3 },
+  { xPct: 63, yPct: 0, wPct: 22, rot:  3 },
 ];
 
 const slidePhotos = [
@@ -252,31 +252,18 @@ export default function Slideshow() {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <PhotoStrip current={current} fading={fading} />
-
-      {/* Category label */}
+      {/* Large centered motif behind the slides */}
       <div style={{
-        position: 'absolute', bottom: '80px',
-        left: 'calc(var(--border-width) + 32px)',
-        zIndex: 10,
-        opacity: fading ? 0 : 1,
-        transition: 'opacity 0.3s ease',
+        position: 'absolute', inset: 0, zIndex: 0,
+        backgroundImage: 'url(/homebackground.png)',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundSize: 'min(60vw, 700px) auto',
+        opacity: 1,
         pointerEvents: 'none',
-      }}>
-        <p style={{
-          fontFamily: "'Cinzel', serif", fontSize: '11px',
-          letterSpacing: '3px', color: 'rgba(84,22,29,0.5)', marginBottom: '6px',
-        }}>
-          EXPLORE
-        </p>
-        <h2 style={{
-          fontFamily: "'Cormorant Garamond', serif",
-          fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-          fontWeight: '400', color: '#54161D', lineHeight: '1',
-        }}>
-          {slides[current].label}
-        </h2>
-      </div>
+      }}/>
+
+      <PhotoStrip current={current} fading={fading} />
 
       {/* Left arrow */}
       <button

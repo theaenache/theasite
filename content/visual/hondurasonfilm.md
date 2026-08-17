@@ -2,6 +2,7 @@
 title: "Honduras on Kodak Gold"
 date: "2024-04-01 - 2024-04-07"
 tag: "Photo Album"
+visualTag: "Visual"
 location: "El Bailadero, HN"
 cover: "/images/visual/honduras/hondurasfilmcovers/9.png"
 sketch: "/images/visual/honduras/hondurasfilmcovers/81.png"

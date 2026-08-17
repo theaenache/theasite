@@ -17,8 +17,9 @@ function getEntries() {
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 }
 
-export default function IntakePage() {
+export default async function IntakePage({ searchParams }) {
   const entries = getEntries();
+  const { category, open } = await searchParams;
 
   return (
     <>
@@ -43,7 +44,7 @@ export default function IntakePage() {
             Nothing logged yet.
           </p>
         ) : (
-          <IntakeGrid items={entries} />
+          <IntakeGrid items={entries} initialCategory={category} initialOpenSlug={open} />
         )}
       </div>
       <MinimalFooter />
