@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useRouter } from 'next/navigation';
 
 const WORD_BANK_LIMIT = 24;
@@ -77,10 +78,13 @@ export default function SearchBar({ index }) {
         </svg>
       </button>
 
+      {open && createPortal(
+        <div onClick={() => setOpen(false)} style={{ position: 'fixed', inset: 0, zIndex: 150 }}/>,
+        document.body
+      )}
+
       {open && (
         <>
-          <div onClick={() => setOpen(false)} style={{ position: 'fixed', inset: 0, zIndex: 150 }}/>
-
           <form onSubmit={handleSubmit} style={{
             position: 'absolute', top: 'calc(100% + 8px)', right: 0,
             width: '300px', background: '#FFFBF0',

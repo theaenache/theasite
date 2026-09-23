@@ -42,7 +42,7 @@ All in all, the album transitions seamlessly from the top to the bottom through 
 
 I could waffle on about my interpretation from song to song for hours, but long story short, this album was perfect and I recommend everyone listen to it top to bottom at least once. It is also a great meditation on spirituality if you are Spanish speaking.
 
-Thanks for reading and I hope your day is gonna be a good day <3
+Thanks for reading!!
 
 
 Favs off the album: 
